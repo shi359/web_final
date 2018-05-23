@@ -1,90 +1,10 @@
 /*************************
- *    website header     *       
- *************************/
-.roof{
-    display: block;
-    background-color: rgba(255,255,255,0.8);
-    width: 100%;
-    margin-bottom: 2rem;
-}
-
-.roof img{
-    float: left;
-    position: relative;
-    margin-top: 1rem;
-    height: 8%;
-}
-
-.dept ul{
-    float: right;
-    vertical-align: bottom;
-    list-style-type: none;
-    margin: 0 2rem 0 0;
-    padding: 0;
-    font-size: 1.5rem;
-}
-
-.dpt{
-    display: inline;
-    color: rgb(121,31,108);
-}
-
-.dpt + .dpt::before{
-    padding-right: .5rem;
-    padding-left: .5rem;
-    content: "|";
-}
-
-.dpt a{
-    text-decoration: none;
-    color: rgb(121,31,108);
-    font-size: 1.5rem;
-}
-
-/*************************
- *    navigation bar     *       
- *************************/
-
-.navbar{
-    background-color:rgb(121, 31, 108);
-    border-color: rgb(121,31,108);
-    font-size: 1.5em;
-}
-
-.nav li a{
-    color: #ffffff;
-}
-
-.nav li a:hover{
-    background-color: rgba(255,255,255,0.3); 
-}
-
-.nav .open>a, .nav .open>a:focus, .nav .open>a:hover{
-    background-color: rgba(255,255,255,0.3);
-}
-.dropdown-menu {
-    background-color: rgb(121,31,108); 
-    font-size: 2rem;
-    color: #000000;
-}
-
-section{
-    height: 65%;
-    text-align: center;
-}
-
-hr{
-    width: 80%;
-    border-bottom: 1px solid rgba(152,152,152);
-}
-
-/*************************
- *    slide show         *       
+ *      slide show       *       
  *************************/
 
 .carousel{
     height: 100%;
-    width: 50%;
+    width: 100%;
     margin: auto;
 }
 .item{
@@ -97,82 +17,90 @@ hr{
     max-width: none;
 }
 
+/*************************
+ *      announcement     *       
+ *************************/
+ 
+.announce{
+    margin:1em;
+    font-size:2rem;
+    display: block;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
 
-.ano .row{
+.announce .anno_date{
+    padding:0.8em;
+    background-color: rgb(121,38,108);
+    font-weight:bold;
+    color: rgba(255,255,255,1);
+    font-size: 2rem;
+    display: block;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.announce .anno_title{
+    padding:0.8em;
+    color: rgba(0,0,0,1);
+    font-size: 2rem;
+    display: block;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+    text-align: left;
+}
+
+.announce:nth-child(odd) .anno_title{
+    background-color: rgba(152,152,152,0.1);
+}
+
+.announce:nth-child(even) .anno_title{
+    background-color: rgba(152,152,152,0.3);
+}
+
+.ano .anno_row{
     margin: auto;
     width: 80%;
     float: center;
-    background-color: rgba(152,152,152,0.2);
 }
+
+/*************************
+ *    event deadline     *       
+ *************************/
 
 .deadline{
     display: block;
 }
 .event{
-   margin: auto;
-   margin-top: 2rem;
-   margin-bottom: 9rem;
-   width: 30%; 
    -webkit-box-sizing: border-box;
    -moz-box-sizing: border-box;
    box-sizing: border-box;
 }
 
 .event-header{
-    display: inline;
+    padding: 1rem;
+    display: block;
 }
 
 .event-date{
-    float: left;
+    padding:0.8em;
     background-color: rgb(121,38,108);
     font-weight:bold;
     font-size: 2rem;
-    width: 30%;
+    vertical-align: middle;
     display: block;
     color: #ffffff;
 }
 
 .event-title{
-    width: 70%;
-    height: 4em;
-    float: right;
-    vertical-align: ;
+    padding:0.8em;
     background-color: rgba(152,152,152,0.4);
-}
-/*************************
- *    website footer     *       
- *************************/
-.footer{
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-    margin-bottom: 0;
-    box-sizing: border-box;
-    display: block;
-    background-color: rgb(121,31,108);
-    color: #ffffff;
-    text-align: center;
-}
-
-.footer img{
-    height: 13%;
-    margin-top: 1rem;
+    font-weight:bold;
+    font-size: 2rem;
     vertical-align: middle;
-}
-
-.footer ul{
-   list-style-type: none; 
-   line-height: 2rem;
-   text-align: left;
-   vertical-align: middle;
-   margin-top: 2rem;
-}
-
-.footr .row{
-    position: relative;
-    width:100%;
-}
-
-i{
-  margin-right: 1rem;
+    display: block;
+    color: #000000;
 }

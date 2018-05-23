@@ -23,3 +23,12 @@ $('.carousel').carousel({
   interval: 6000,
   pause: "false"
 });
+
+$(document).ready(function() {
+    $('.dropdown').on('show.bs.dropdown', function() {
+        $(this).find('.dropdown-menu').first().stop(true, true).slideDown(200);
+    });
+    $('.dropdown').on('hide.bs.dropdown', function() {
+        $(this).find('.dropdown-menu').first().stop(true, true).slideUp(200);
+    });
+});

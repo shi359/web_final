@@ -5,9 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./fix_layout.css">
     <link rel="stylesheet" href="./index.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" language="javascript" src="./index.js" charset="UTF-8"></script>
 </head>
 <body>
     <!-- header -->
@@ -19,7 +21,6 @@
             <ul>
                 <li class="dpt"><a href="http://www.nthu.edu.tw" target="_blank">清華大學</a></li>
                 <li class="dpt"><a href="http://student.web.nthu.edu.tw" target="_blank">學務處</a></li>
-                <li class="dpt"><a href="http://meo22.wwlc.nthu.edu.tw/military" target="_blank">軍訓室</a></li>
             </ul>
         </div>    
         <div class="clearfix"></div>
@@ -36,7 +37,7 @@
           </div>
           <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
-              <li class="active"><a href="/index.php">首頁</a></li>
+              <li class="active"><a href="./index.php">首頁</a></li>
               <li><a href="#">成員介紹</a></li>
               <li><a href="#">失物招領</a></li>
               <li class="dropdown">
@@ -129,35 +130,57 @@
     <section class="ano">
         <div>
             <h1>最新公告</h1>
-            <div class="row">
-                <h3>test</h3>
+            <div class="anno_row">
+                <div class="row announce">
+                    <div class="col-sm-2 anno_date">2018-5-32</div>
+                    <div class="col-sm-10 anno_title">公告</div>
+                </div>
+                <div class="row announce">
+                    <div class="col-sm-2 anno_date">2018-5-32</div>
+                    <div class="col-sm-10 anno_title">公告</div>
+                </div>
+                <div class="row announce">
+                    <div class="col-sm-2 anno_date">2018-5-32</div>
+                    <div class="col-sm-10 anno_title">公告</div>
+                </div>
+                <div class="row announce">
+                    <div class="col-sm-2 anno_date">2018-5-32</div>
+                    <div class="col-sm-10 anno_title">公告</div>
+                </div>
+                <div class="row announce">
+                    <div class="col-sm-2 anno_date">2018-5-32</div>
+                    <div class="col-sm-10 anno_title">公告</div>
+                </div>
             </div>
+        </div>
+    </section>
+    <hr>
+    
+    <section class="popular">
+        <div>
+            <h1>常用項目</h1>
         </div>
     </section>
     <hr>
     <section class="deadline">
         <div class="container">
             <h1>服務辦理時程</h1>
-            <div class="event">
-                <div class="event-header">
-                    <div class="event-date">
-                        <div class="month">Jan</div>
-                        <div class="date">13</div>
-                    </div>
-                    <div class="event-title">
-                        <h4>學雜費減免申請截止</h4>
-                    </div>
+            <div class="row event">
+                <div class="event-header col-sm-6">
+                    <div class="col-sm-4 event-date">2018-1-13</div>
+                    <div class="col-sm-8 event-title">學雜費減免申請截止</div>
                 </div>
-            </div>
-            <div class="event">
-                <div class="event-header">
-                    <div class="event-date">
-                        <div class="month">Jan</div>
-                        <div class="date">13</div>
-                    </div>
-                    <div class="event-title">
-                        <h4>學雜費減免申請截止</h4>
-                    </div>
+                <div class="event-header col-sm-6">
+                    <div class="col-sm-4 event-date">2018-1-13</div>
+                    <div class="col-sm-8 event-title">學雜費減免申請截止</div>
+                </div>
+                <div class="event-header col-sm-6">
+                    <div class="col-sm-4 event-date">2018-1-13</div>
+                    <div class="col-sm-8 event-title">學雜費減免申請截止</div>
+                </div>
+                <div class="event-header col-sm-6">
+                    <div class="col-sm-4 event-date">2018-1-13</div>
+                    <div class="col-sm-8 event-title">學雜費減免申請截止</div>
                 </div>
             </div>
         </div>
@@ -169,16 +192,14 @@
                 <div class="col-sm-1">
                     <img src="logo.png">
                 </div>
-                <div class="col-sm-3">
-                    <h3>國立清華大學</h3> 
+                <div class="col-sm-4">
+                    <h4>國立清華大學</h4> 
                     <h5>National Tsing Hua University</h5> 
-                    <div>&copy;NTHU</div>
                 </div>
                 <div class="col-sm-5">
                     <ul>
                         <li><i class="fa fa-map-marker"></i>30013 新竹市光復路二段101號 水木生活中心二樓</li>
                         <li><i class="fa fa-phone"></i>03-5711814 或 03-5715131#66666</li>
-                        <li><i class="fa fa-envelope"></i>service@my.nthu.edu.tw</li>
                     </ul>
                 </div>
             </div>

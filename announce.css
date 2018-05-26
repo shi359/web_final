@@ -1,0 +1,49 @@
+/*************************
+ *      announcement     *       
+ *************************/
+ 
+.announce{
+    margin: 1em;
+    font-size: 2rem;
+    display: block;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.announce .anno_date{
+    padding:0.8em;
+    background-color: rgb(121,38,108);
+    font-weight: bold;
+    color: rgba(255,255,255,1);
+    font-size: 2rem;
+    display: block;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.announce .anno_title{
+    padding: 0.8em;
+    color: rgba(0,0,0,1);
+    font-size: 2rem;
+    display: block;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+    text-align: left;
+}
+
+.announce:nth-child(odd) .anno_title{
+    background-color: rgba(152,152,152,0.1);
+}
+
+.announce:nth-child(even) .anno_title{
+    background-color: rgba(152,152,152,0.3);
+}
+
+.announce .anno_row{
+    margin: 40px auto;
+    width: 80%;
+    float: center;
+}

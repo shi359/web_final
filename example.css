@@ -1,0 +1,40 @@
+.content{
+    margin:auto;
+    width:80%;
+    text-align:left;
+    font-size:1.4em;
+}
+
+.contact{
+    text-align: left;
+    font-size: 1.3125em;
+    padding: 0.1em 0;
+    margin-top: 2em;
+    color: #791F6C;
+}
+
+.extension, .mail{
+    text-align: left;
+    font-size: 1.3125em;
+    padding: 0.1em 0;
+    color: #791F6C;
+}
+
+.content hr{
+    width: 100%;
+}
+
+h2{
+    color: #791F6C;
+    font-weight: bold;
+}
+
+h3{
+    color: #141260;
+    font-weight: bold;
+}
+
+h4{
+    color: #888888;
+    font-weight: bold;
+}

@@ -10,6 +10,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" language="javascript" src="./fix_layout.js" charset="UTF-8"></script>
     <script type="text/javascript" language="javascript" src="./member.js" charset="UTF-8"></script>
 </head>
 <body>
@@ -76,15 +77,15 @@
               </li>
               <li><a href="#">校園安全</a></li>
               <li><a href="#">紫錐花運動</a></li>
-              <li><a href="#">住宿賃居</a></li>
               <li class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown" href="#">學生獎懲<span class="caret"></span></a>
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">住宿賃居<span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                  <li><a href="#">分類1</a></li>
-                  <li><a href="#">分類2</a></li>
-                  <li><a href="#">分類3</a></li>
+                  <li><a href="#">校外賃居</a></li>
+                  <li><a href="#">候補宿舍申請</a></li>
+                  <li><a href="#">新生宿舍服務學長姐</a></li>
                 </ul>
               </li>
+              <li><a href="#">學生獎懲</a></li>
               <li><a href="#">相關下載</a></li>
             </ul>
           </div>
@@ -92,7 +93,7 @@
       </nav>
     <!-- Member -->
     <section class="member">
-        <div class="position_div">
+        <div class="position_div container">
             <div class="position row">
                 生輔組組長
             </div>
@@ -100,12 +101,12 @@
                 <div class="row">
                     <div class="card col-sm-6">
                         <div class="member_title row">
-                            <div class="member_name col-sm-4">
+                            <span class="member_name">
                                 王聖惟
-                            </div>
-                            <div class="member_class col-sm-5">
+                            </span>&nbsp;
+                            <span class="member_class">
                                 上校教官
-                            </div>
+                            </span>
                         </div>
                         <div class="member_content row">       
                             <div class="pic col-sm-4">
@@ -137,7 +138,7 @@
                 </div>
             </div>
         </div>
-        <div class="position_div">
+        <div class="position_div container">
             <div class="position row">
                 教官
             </div>
@@ -145,12 +146,12 @@
                 <div class="row">
                     <div class="card col-sm-6">
                         <div class="member_title row">
-                            <div class="member_name col-sm-4">
+                            <span class="member_name">
                                 張玉美
-                            </div>
-                            <div class="member_class col-sm-5">
+                            </span>&nbsp;
+                            <span class="member_class">
                                 中校教官
-                            </div>
+                            </span>
                         </div>
                         <div class="member_content row">       
                             <div class="pic col-sm-4">
@@ -186,12 +187,12 @@
                     </div>
                     <div class="card col-sm-6">
                         <div class="member_title row">
-                            <div class="member_name col-sm-4">
+                            <span class="member_name">
                                 于連鑫
-                            </div>
-                            <div class="member_class col-sm-5">
+                            </span>&nbsp;
+                            <span class="member_class">
                                 中校教官
-                            </div>
+                            </span>
                         </div>
                         <div class="member_content row">       
                             <div class="pic col-sm-4">
@@ -235,20 +236,18 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-1">
-                    <img src="logo.png">
+                    <img src="logo.png"></img>
                 </div>
                 <div class="col-sm-4">
                     <h4>國立清華大學</h4> 
                     <h5>National Tsing Hua University</h5> 
                 </div>
-                <div class="col-sm-5">
-                    <ul>
-                        <li><i class="fa fa-map-marker"></i>30013 新竹市光復路二段101號 水木生活中心二樓</li>
-                        <li><i class="fa fa-phone"></i>03-5711814 或 03-5715131#66666</li>
-                    </ul>
+                <div class="col-sm-7 foot_info">
+                    <div><i class="fa fa-map-marker"></i>30013 新竹市光復路二段101號 水木生活中心二樓</div>
+                    <div><i class="fa fa-phone"></i>03-5711814 或 03-5715131#66666</div>
                 </div>
             </div>
-        </footer>
-    </div>
+        </div>
+    </footer>
 </body>
 

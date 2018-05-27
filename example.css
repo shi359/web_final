@@ -24,17 +24,17 @@
     width: 100%;
 }
 
-h2{
+.content h2{
     color: #791F6C;
     font-weight: bold;
 }
 
-h3{
+.content h3{
     color: #141260;
     font-weight: bold;
 }
 
-h4{
+.content h4{
     color: #888888;
     font-weight: bold;
 }

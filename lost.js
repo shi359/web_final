@@ -23,3 +23,15 @@ function preview(event){
 
 	}
 }
+
+$(function() {
+  var $sort = $("#sort");
+
+   $sort.click(function(){
+     if($(this).attr("class") == "fa fa-caret-up"){
+     	$(this).attr("class","fa fa-caret-down");
+     } else{
+     	$(this).attr("class","fa fa-caret-up");
+     }
+   });	
+});

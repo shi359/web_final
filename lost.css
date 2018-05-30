@@ -11,6 +11,11 @@
 .bar-content{
     font-size: 2.14rem;
 }
+
+.bar-content a{
+  color: inherit;
+}
+
 /*****************
    Form
 *****************/

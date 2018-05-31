@@ -93,12 +93,12 @@
     <section>
         <div class="container">
             <div class="row">
-                <div class="col-sm-10">
+                <div>
                     <h1>失物招領</h1>
                     <hr>
                 </div>
-                <div class="col-sm-2">
-                    <button type="button" class="post btn btn-primary btn-lg" data-toggle="modal" data-target="#postModal">協尋失物</button>
+                <div>
+                    <button type="button" class="post btn btn-primary btn-lg" data-toggle="modal" data-target="#postModal">拾獲失物</button>
                     <div class="modal fade" id="postModal" tabindex="-1" role="dialog" >
 						<div class="modal-dialog" role="document">
 						    <div class="modal-content">
@@ -120,11 +120,11 @@
 						      			<input type="checkbox" id="anom" onclick="showName()">是(請將物品送至教官室)<br>
 						      		</div>
 						      		<div class="fillup">
-						      			<label for="name" class="hid"><b>聯絡人姓名</b></label>
+						      			<label for="name" class="hid"><b>聯絡姓名</b></label>
 						      			<input class="hid" type="text" maxlength="10" placeholder="姓名" required>
 						      		</div>
 						      		<div class="fillup">	
-						      			<label for="phone" class="hid"><b>聯絡人電話</b></label>
+						      			<label for="phone" class="hid"><b>聯絡電話</b></label>
 						      			<input class="hid" type="text" maxlength="15" placeholder="09xx" required>
 						      		</div>
 						      		<div class="fillup">	
@@ -152,6 +152,7 @@
 					</div> 
                 </div>
             </div>   
+            <!-- item bar -->
             <div class="row bar">
                 <div class="col-sm-4">
                     <form action="" class="search-form">
@@ -168,6 +169,7 @@
                     <a href="./lost_rule.pdf" target="_blank">規章</a>
                 </div>    
             </div>    
+        <!-- list all lost items-->
             <div class="row item-list">
                 <div class="row item">
                     <div class="col-sm-5">
@@ -239,6 +241,15 @@
                     </div>    
                 </div>    
         </div>    
+        <div class="pager">
+            <ul class="pagination">
+                <li class="disabled"><a href="#"><</a></li>
+                <li class="active"><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">></a></li>
+            </ul>
+        </div>
     </section>
     
     <!-- Footer -->

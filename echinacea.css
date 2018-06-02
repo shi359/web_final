@@ -130,6 +130,10 @@ ul, ol{
     line-height: 40px
 }
 
+a{
+    color: inherit;
+}
+
 table{
     font-size: 20px;
     word-break: break-all;

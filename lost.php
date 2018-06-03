@@ -1,3 +1,52 @@
+<?
+/*
+$sql = "select * from lost;";
+$result = $conn->query($sql);
+if($result->num_rows > 0){
+    while($row = $result->fetch_assoc()){
+        echo "item: ".$row["item"]."<br>";
+        echo "place: ".$row["place"]."<br>";
+        echo "name: ".$row["name"]."<br>";
+        echo "phone: ".$row["phone"]."<br>";
+    }
+}*/
+if ($_SERVER['REQUEST_METHOD'] == "GET") {
+     search();
+ } else if ($_SERVER['REQUEST_METHOD'] == "POST") {
+     create();
+ }
+
+function calcDay($d){
+    $dates = date('Y-m-d');
+    $date = new DateTime($dates);
+    $interval = "+".$d." day";
+    $date->modify($interval);
+    return $date->format('Y-m-d');
+}
+
+ function search(){
+
+ }
+
+function create(){
+      
+    require_once('config.php');
+     $stmt = $conn->prepare("Insert into lost (item, place, name, phone, expire) values (?,?,?,?,?)");
+     $stmt->bind_param("sssss", $_POST["item"],$_POST["place"], $name,$phone, $expire);
+     // deal with anonymous
+     if($_POST["anom"] == "false"){
+         $name = "生輔組";
+         $phone = "035711814";
+         $expire = calcDay(180);
+     } else{
+        $name = $_POST["name"];
+        $phone = $_POST["phone"];
+        $expire = calcDay($_POST["days"]);    
+     }
+     $stmt->execute();
+ }
+?>
+<html>
 <head>
     <title>清華大學生活輔導組</title>
     <link rel="shortcut icon" type="image/png" href="logo.png" sizes="72x72" />
@@ -89,8 +138,11 @@
             </ul>
           </div>
         </div>
-      </nav>
-    <section>
+        </nav>
+        <!-- End of Navigation bar -->
+        
+        <!-- main content -->
+        <section>
         <div class="container">
             <div class="row">
                 <div>
@@ -98,6 +150,7 @@
                     <hr>
                 </div>
                 <div>
+                    <!-- form -->
                     <button type="button" class="post btn btn-primary btn-lg" data-toggle="modal" data-target="#postModal">拾獲失物</button>
                     <div class="modal fade" id="postModal" tabindex="-1" role="dialog" >
 						<div class="modal-dialog" role="document">
@@ -106,30 +159,32 @@
 						        <h1 class="modal-title" id="exampleModalLabel">失物通報</h1>
 						      </div>
 						      <div class="modal-body">
-						      	<form class="pop-form" action="none">
+						      	<form class="pop-form" method="post">
 						      		<div class="fillup">
 							      		<label for="item"><b>項目</b></label>
 							      		<input type="text" id="item" maxlength="25" placeholder="項目" required>
 						      		</div>
 						      		<div class="fillup">
 						      			<label for="place"><b>拾獲地點</b></label>
-						      			<input type="text" id="place" maxlength="15" placeholder="地點" required>
+                                        <input type="text" id="place" maxlength="15" placeholder="地點" required>
 						      		</div>
 						      		<div class="fillup">
-						      			<label for="anom"><b>是否匿名</b></label>
-						      			<input type="checkbox" id="anom" onclick="showName()">否(若選擇匿名請將物品送至教官室)<br>
+                                        <label for="anom"><b>是否匿名</b></label>
+
+						      			<input type="checkbox" id="anom" onclick="showName()">否(若匿名請將物品送至教官室)<br>
 						      		</div>
 						      		<div class="fillup">
-						      			<label for="name" class="hid"><b>聯絡姓名</b></label>
-						      			<input class="hid" type="text" id="name" maxlength="10" placeholder="姓名" required>
+
+                                        <label for="name" class="hid"><b>聯絡姓名</b></label>
+						      			<input class="hid" type="text" id="name" maxlength="10" placeholder="姓名">
 						      		</div>
 						      		<div class="fillup">	
 						      			<label for="phone" class="hid"><b>聯絡電話</b></label>
-						      			<input class="hid" type="text" id="phone" maxlength="15" placeholder="09xx" required>
+						      			<input class="hid" type="text" id="phone" maxlength="15" placeholder="09xx">
 						      		</div>
 						      		<div class="fillup">	
 							      		<label for="expire" class="hid"><b>到期時間</b></label>
-							      		<select class="hid" name="days">
+							      		<select class="hid" id="days">
 							      			<option value="3"> 3 天 </option>
 							      			<option value="7"> 1 週 </option>
 							      			<option value="14"> 2 週 </option>
@@ -137,15 +192,16 @@
 							      		</select>
 							      	</div>
 							      	<div class="fillup">	
-						      			<label for="phto"><b>照片</b></label>
-						      			<input type="file" required onchange="preview(event)">
+
+                                        <label for="phto"><b>照片</b></label>
+						      			<input type="file" name="photo"  onchange="preview(event)">
 						      			<img id="prevw" src="2.jpg">
 						      		</div>	
 						      	</form>
 						      </div>
 						      <div class="modal-footer">
-						        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-						        <button type="button" id="post" class="btn btn-primary" onclick="postLost()">Save changes</button>
+						        <button type="button" class="btn btn-secondary" data-dismiss="modal">關閉</button>
+						        <button type="submit" id="post" class="btn btn-primary">發佈</button>
 						      </div>
 						    </div>
 						</div>
@@ -250,10 +306,8 @@
                 <li><a href="#">></a></li>
             </ul>
         </div>
-    </section>
-    
-    <!-- Footer -->
-    <footer class="footer">
+        <!-- Footer -->
+        <footer class="footer">
         <div class="container">
             <div class="row">
                 <div class="col-sm-1">
@@ -270,5 +324,4 @@
             </div>
         </div>
     </footer>
-</body>
-
+</html>

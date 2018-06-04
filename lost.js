@@ -1,7 +1,9 @@
-var hidList = document.getElementsByClassName("hid");
 function showName() {
+    var hidList = document.getElementsByClassName("hid");
 	var check = document.getElementById("anom"); 
 	if(check.checked == true){
+        $("#name").prop('required',true);
+        $("#phone").prop('required',true);
 		for(var i=0; i < hidList.length; i++)
 			hidList[i].style.display="inline-block";
 	} else{
@@ -13,6 +15,29 @@ function showName() {
 
 function preview(event){
 	var img = event.target;
+
+    /// check file size
+    var size = img.files[0].size;
+    if(size/1024 > 1){
+        size = Math.round(((size/1024)*1000)/1000);
+        if(size > 2000){
+            alert("檔案不可超過 2MB");
+            event.target.value="";
+            document.getElementById('prevw').style.display="none";
+            return;
+        }
+    }
+
+    // check file type
+    var type = img.files[0].type;
+    var valid = ["image/jpg", "image/jpeg", "image/png"];
+    if($.inArray(type,valid) < 0){
+        alert("檔案格式錯誤");
+        event.target.value="";
+        document.getElementById('prevw').style.display="none";
+        return;
+    }
+    // previw the uploaded photo
 	var reader = new FileReader();
 	reader.readAsDataURL(img.files[0]);
 	reader.onload = function(){
@@ -26,7 +51,8 @@ function preview(event){
 
 $(document).ready(function() {
   var $sort = $("#sort");
-  var $post = $("#post");
+  var $phone = $("#phone");
+ // var $post = $("#post");
    $sort.click(function(){
      if($(this).attr("class") == "fa fa-caret-up"){
      	$(this).attr("class","fa fa-caret-down");
@@ -34,44 +60,17 @@ $(document).ready(function() {
      	$(this).attr("class","fa fa-caret-up");
      }
    });	
-   
+
+   /*
     $post.click(function(){
-        var $itm = $("#item").val();
-        var $place = $("#place").val();
-        var $days = $("#days").val();
-        var $name = $("#name").val();
-        var $phone = $("#phone").val();
         var $anom = $("#anom").is(":checked");
         var patt = /^09\d{8}$/;
-        if($itm.length == 0 || $place.length == 0){
-            alert("請填寫完整");
-            return;
-        }
-        if($anom == true){
-            console.log($anom);
-            if($name.length == 0 || $phone.length == 0){
-                alert("請填寫完整");
-                return;
-            }
-            if(patt.test($phone)==false){
+
+        // check form completion
+        if($anom == true && patt.test($("#phone").val())==false){
                 alert("電話號碼格式錯誤");
-                return;
-            }
         }
-        $.ajax({
-            type: "POST",
-            url: "lost.php",
-            data: {
-                item: $itm,
-                place: $place,
-                days: $days,
-                anom: $anom,
-                name: $name,
-                phone: $phone
-            },
-            success: function(){
-             $('#postModal').modal('hide');
-            }
-        });
-    });
+        else
+            $.post("lost.php",$(".pop-form".serialize())); // post request
+    }); */
 }); 

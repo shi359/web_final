@@ -1,21 +1,11 @@
 <?
-/*
-$sql = "select * from lost;";
-$result = $conn->query($sql);
-if($result->num_rows > 0){
-    while($row = $result->fetch_assoc()){
-        echo "item: ".$row["item"]."<br>";
-        echo "place: ".$row["place"]."<br>";
-        echo "name: ".$row["name"]."<br>";
-        echo "phone: ".$row["phone"]."<br>";
-    }
-}*/
 if ($_SERVER['REQUEST_METHOD'] == "GET") {
      search();
  } else if ($_SERVER['REQUEST_METHOD'] == "POST") {
      create();
  }
 
+// calculate deadline in sql format
 function calcDay($d){
     $dates = date('Y-m-d');
     $date = new DateTime($dates);
@@ -24,26 +14,51 @@ function calcDay($d){
     return $date->format('Y-m-d');
 }
 
- function search(){
+function uploadImg($id){
+    if(isset($_FILES['photo'])){
+        // check file type
+        $file = $_FILES['photo'];
+        $filename = $file['name'];
+        $type = pathinfo($filename, PATHINFO_EXTENSION);
+        $allow=array("jpg","jpeg","png");
+        if(in_array($type,$allow)){
+            $dir = __DIR__."/lost_photo/";
+            $newName = $id.".".$type;
+            $target = $dir.$newName;
+            $err = move_uploaded_file($_FILES['photo']['tmp_name'],$target);
+        } else{
+            return "";
+        }
+        return $newName;
+    }else{
+        return "";
+    }
+}
 
- }
+function search(){
+
+}
 
 function create(){
-      
-    require_once('config.php');
-     $stmt = $conn->prepare("Insert into lost (item, place, name, phone, expire) values (?,?,?,?,?)");
-     $stmt->bind_param("sssss", $_POST["item"],$_POST["place"], $name,$phone, $expire);
-     // deal with anonymous
-     if($_POST["anom"] == "false"){
-         $name = "生輔組";
-         $phone = "035711814";
-         $expire = calcDay(180);
-     } else{
-        $name = $_POST["name"];
-        $phone = $_POST["phone"];
-        $expire = calcDay($_POST["days"]);    
-     }
-     $stmt->execute();
+    require('config.php');
+    $sql = "Select id from lost where id in (Select MAX(id) from lost)";
+    $id = $conn->query($sql)->fetch_assoc()["id"]+1;
+    $result = uploadImg($id);
+    if($result != ""){
+        $stmt = $conn->prepare("Insert into lost (item, place, name, phone, expire,img) values (?,?,?,?,?,?)");
+        $stmt->bind_param("ssssss", $_POST["item"],$_POST["place"], $name,$phone, $expire,$result);
+        // deal with anonymous
+        if($_POST["name"] == ""){
+            $name = "生輔組";
+            $phone = "035711814";
+            $expire = calcDay(180);
+        } else{
+            $name = $_POST["name"];
+            $phone = $_POST["phone"];
+            $expire = calcDay($_POST["days"]);    
+        }
+        $stmt->execute();
+    }
  }
 ?>
 <html>
@@ -158,34 +173,39 @@ function create(){
 						      <div class="modal-header">
 						        <h1 class="modal-title" id="exampleModalLabel">失物通報</h1>
 						      </div>
+						      <form class="pop-form" method="post" enctype="multipart/form-data">
 						      <div class="modal-body">
-						      	<form class="pop-form" method="post">
 						      		<div class="fillup">
 							      		<label for="item"><b>項目</b></label>
-							      		<input type="text" id="item" maxlength="25" placeholder="項目" required>
+							      		<input type="text" id="item" name="item" maxlength="25" placeholder="項目" required>
 						      		</div>
 						      		<div class="fillup">
 						      			<label for="place"><b>拾獲地點</b></label>
-                                        <input type="text" id="place" maxlength="15" placeholder="地點" required>
+                                        <input type="text" id="place" name="place" maxlength="15" placeholder="地點" required>
 						      		</div>
 						      		<div class="fillup">
                                         <label for="anom"><b>是否匿名</b></label>
 
-						      			<input type="checkbox" id="anom" onclick="showName()">否(若匿名請將物品送至教官室)<br>
+
+						      			<input type="checkbox" id="anom" name="anom" onclick="showName()">否(若匿名請將物品送至教官室)<br>
 						      		</div>
 						      		<div class="fillup">
 
-                                        <label for="name" class="hid"><b>聯絡姓名</b></label>
-						      			<input class="hid" type="text" id="name" maxlength="10" placeholder="姓名">
+                                        <label for="name" class="hid"><b>聯絡姓名</
+b></label>
+						      			<input class="hid" type="text" id="name" name="name" maxlength="10" placeholder="姓名">
 						      		</div>
 						      		<div class="fillup">	
-						      			<label for="phone" class="hid"><b>聯絡電話</b></label>
-						      			<input class="hid" type="text" id="phone" maxlength="15" placeholder="09xx">
+                                        <label for="phone" class="hid"><b>聯絡電話</b></label
+>
+						      			<input class="hid" type="tel" id="phone" name="phone" maxlength="15" placeholder="09xx" pattern='\^09\d{8}$' >
 						      		</div>
 						      		<div class="fillup">	
-							      		<label for="expire" class="hid"><b>到期時間</b></label>
-							      		<select class="hid" id="days">
-							      			<option value="3"> 3 天 </option>
+                                        <label for="expire" class="hid"><b>到期時間</b></label>
+
+							      		<select class="hid" id="days" name="days">
+
+                                            <option value="3"> 3 天 </option>
 							      			<option value="7"> 1 週 </option>
 							      			<option value="14"> 2 週 </option>
 							      			<option value="30"> 1 月 </option>
@@ -194,15 +214,15 @@ function create(){
 							      	<div class="fillup">	
 
                                         <label for="phto"><b>照片</b></label>
-						      			<input type="file" name="photo"  onchange="preview(event)">
+						      			<input type="file" name="photo" id="upload" required onchange="preview(event)">
 						      			<img id="prevw" src="2.jpg">
 						      		</div>	
-						      	</form>
 						      </div>
 						      <div class="modal-footer">
 						        <button type="button" class="btn btn-secondary" data-dismiss="modal">關閉</button>
 						        <button type="submit" id="post" class="btn btn-primary">發佈</button>
 						      </div>
+                   </form>
 						    </div>
 						</div>
 					</div> 
@@ -225,78 +245,40 @@ function create(){
                     <a href="./lost_rule.pdf" target="_blank">規章</a>
                 </div>    
             </div>    
-        <!-- list all lost items-->
-            <div class="row item-list">
-                <div class="row item">
-                    <div class="col-sm-5">
-                        <div class="item-img">
-                            <img src="test.jpg">
-                        </div>
-                    </div>
-                    <div class="item-content col-sm-7">
-                        <h4>item name</h4>
-                        <div class="place">
-                          <span class="item-place">拾獲地點:</span>
-                          <span class="place-dscrpt">sexy mama yo</span>
-                        </div>
-                        <div class="contact">
-                            <i class="fa fa-clock-o"></i> 2019-07-01
-                        </div>
-                        <div class="contact">
-                            <i class="fa fa-user"></i> 大肌肌
-                        </div>
-                        <div class="contact">
-                            <i class="fa fa-phone"></i> 095279527
-                        </div>
-                    </div>
-                </div>    
-                <div class="item">
-                    <div class="col-sm-5">
-                        <div class="item-img">
-                            <img src="1.jpg">
-                        </div>    
-                    </div>    
-                    <div class="item-content col-sm-7">
-                        <h4>item name</h4>
-                        <div class="place">
-                            <span class="item-place">拾獲地點:</span>
-                            <span class="place-dscrpt">sexy mama yo</span>
-                        </div>
-                        <div class="contact">
-                            <i class="fa fa-clock-o"></i> 2019-07-01
-                        </div>
-                        <div class="contact">
-                           <i class="fa fa-user"></i> 大肌肌
-                        </div>
-                        <div class="contact">
-                           <i class="fa fa-phone"></i> 095279527
-                        </div>
-                    </div>    
-                </div>    
-                <div class="item">
-                    <div class="col-sm-5">
-                        <div class="item-img">
-                            <img src="2.jpg">
-                        </div>    
-                    </div>    
-                    <div class="item-content col-sm-7">
-                        <h4>item name</h4>
-                        <div class="place">
-                            <span class="item-place">拾獲地點:</span>
-                            <span class="place-dscrpt">sexy mama yo</span>
-                        </div>
-                        <div class="contact">
-                            <i class="fa fa-clock-o"></i> 2019-07-01
-                        </div>
-                        <div class="contact">
-                           <i class="fa fa-user"></i> 大肌肌
-                        </div>
-                        <div class="contact">
-                           <i class="fa fa-phone"></i> 095279527
-                        </div>
-                    </div>    
-                </div>    
-        </div>    
+<?php
+    // list all lost items 
+    require('config.php');
+    $sql = "select * from lost where img is not null order by expire ASC";
+    $result = $conn->query($sql);
+    if($result->num_rows > 0){
+        echo "<div class='row item-list'>";
+        while($row = $result->fetch_assoc()) {
+            echo "<div class='row item'>";
+            // image
+            echo "<div class='col-sm-5'>";
+            echo "<div class='item-img'>";
+            echo "<img src='./lost_photo/".$row["img"]."'>";
+            echo "</div>";
+            echo "</div>";
+            // description
+            echo "<div class='item-content col-sm-7'>";
+            echo "<h4>".$row["item"]."</h4>";
+            echo "<div class='place'>";
+            echo"<span class='item-place'>拾獲地點:</span>";
+            echo"<span class='place-dscrpt'>".$row["place"]."</span>";
+            echo "</div>";
+            echo"<div class='contact'>";
+            echo"<i class='fa fa-clock-o'></i>".$row["expire"]."</div>";
+            echo"<div class='contact'>";
+            echo"<i class='fa fa-user'></i>".$row["name"]."</div>";
+            echo"<div class='contact'>";
+            echo"<i class='fa fa-phone'></i>".$row["phone"]."</div>";
+            echo "</div>";
+            echo "</div>";
+        }
+        echo "</div>";
+    } 
+?>
         <div class="pager">
             <ul class="pagination">
                 <li class="disabled"><a href="#"><</a></li>
@@ -306,6 +288,7 @@ function create(){
                 <li><a href="#">></a></li>
             </ul>
         </div>
+        </section>
         <!-- Footer -->
         <footer class="footer">
         <div class="container">

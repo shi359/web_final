@@ -159,9 +159,18 @@ form:after {
 #content button{
 	cursor: pointer;
 	float: roght;
-	margin: 20px auto 35px 15px;
+	margin: 20px auto;
 	position: relative;
 	text-shadow: 0 1px 0 rgba(255,255,255,0.5);
 	width: 120px;
     font-size: 20px;
+}
+
+.to_page {
+    margin: 20px auto;
+    font-size: 20px;
+}
+
+.to_page a {
+	color: #79266C;
 }

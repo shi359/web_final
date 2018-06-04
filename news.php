@@ -1,5 +1,5 @@
 <?php
-    require('db.php');
+    require('config.php');
     
     $sql = 'select * from announce where id = ' . $_GET['id'];
     $que = $conn->query($sql);
@@ -42,17 +42,24 @@
         echo '<i class="fa fa-paperclip"></i>' . $row['files'];
         echo '</div>';
     }
- ?>
-            <div class="contact">
-                <i class="fa fa-user"></i>郭瀚濤
-
-            </div>
-            <div class="extension">
-                <i class="fa fa-phone"></i>03-5715131#34763
-            </div>
-            <div class="mail">
-                <i class="fa fa-envelope"></i><a href="mailto:kuo-ht@mx.nthu.edu.tw">kuo-ht@mx.nthu.edu.tw</a>
-            </div>
+    
+    if($row['name']!=NULL)
+    {
+        $sql2 = 'select * from member where name = "' . $row['name'] . '"';
+        $que2 = $conn->query($sql2);
+        $row2 = $que2->fetch_assoc();
+        
+        echo '<div class="contact">';
+        echo '<i class="fa fa-user"></i>' . $row2['name'];
+        echo '</div>';
+        echo '<div class="extension">';
+        echo '<i class="fa fa-phone"></i>' . $row2['phone'];
+        echo '</div>';
+        echo '<div class="mail">';
+        echo '<i class="fa fa-envelope"></i><a href="' . $row2['mail'] . '">' . $row2['mail'] . '</a>';
+        echo '</div>';
+    }
+?>
         </div>
     </section>
 

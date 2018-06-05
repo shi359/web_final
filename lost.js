@@ -73,12 +73,12 @@ $(document).ready(function() {
      var search = getParameter("search");
      if($(this).attr("class") == "fa fa-caret-up"){
      	$(this).attr("class","fa fa-caret-down");
-        $.get("lost.php", {sort: "DESC", p: search},function(result){
+        $.get("lost.php", {sort: "DESC", k: search},function(result){
                 $(".row.item-list").html(result); 
              });
      } else{
      	$(this).attr("class","fa fa-caret-up");
-        $.get("lost.php", {sort: "ASC", p: search},function(result){
+        $.get("lost.php", {sort: "ASC", k: search},function(result){
                $(".row.item-list").html(result); 
              },"html");
      }

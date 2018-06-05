@@ -6,7 +6,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST")
 if(isset($_GET["sort"])){
     require_once("config.php");
     $ans = "";
-    if($_GET["p"] == ""){
+    if($_GET["k"] == ""){
         $stmt = $conn->prepare("select * from lost order by expire ".$_GET["sort"]);
         $stmt->execute();
         $result = $stmt->get_result();
@@ -17,7 +17,7 @@ if(isset($_GET["sort"])){
         }
     }
     else{
-        $search = "%".$_GET["p"]."%";
+        $search = "%".$_GET["k"]."%";
         $stmt = $conn->prepare("select * from lost where item like ? or place like ? order by expire ".$_GET["sort"]);
         $stmt->bind_param("ss", $search, $search);
         $stmt->execute();
@@ -288,7 +288,7 @@ b></label>
                 <div class="col-sm-4">
                     <form action="" method="get" class="search-form">
                         <div class="form-group has-feedback">
-                            <input type="text" class="form-control" name="search" id="search" placeholder="搜尋">
+                            <input type="text" class="form-control" name="k" id="search" placeholder="搜尋">
                             <span class="glyphicon glyphicon-search form-control-feedback"></span>
                         </div>    
                     </form>
@@ -305,12 +305,18 @@ b></label>
 <?php
     require_once('config.php');
 
+    // calculate the number of records
+    $sql = "select count(1) as cnt from lost";
+    $records = $conn->query($sql)->fetch_assoc()["cnt"];
+    $limit = 10;
+    $pages = ceil($records/$limit);
+    
     $ans = "";
 
     // return a single item display
-    if(isset($_GET["search"])){
+    if(isset($_GET["k"])){
         // query database
-        $keyword="%".$_GET["search"]."%";
+        $keyword="%".$_GET["k"]."%";
         $stmt = $conn->prepare("select * from lost where item like ? or place like ? order by expire ASC");
         $stmt->bind_param("ss", $keyword, $keyword);
         $stmt->execute();    
@@ -323,26 +329,61 @@ b></label>
             $ans.="<h5 style='color: #aaaaaa'>找不到結果</h5>";
         }
     } 
-    else{
-        // list all lost items 
-        $sql = "select * from lost where img is not null order by expire ASC";
+    else {
+        // list 10 lost items in 1 page 
+        if(isset($_GET["p"]) && $_GET["p"] > 1){
+            $offset = $records-($_GET["p"]-1)*$limit;
+            $count = min($limit, $offset);
+            $sql = "select * from lost order by expire ASC limit ".$offset.", ".$count;
+        }
+        else{
+            $count = min($limit, $records);
+            $sql = "select * from lost order by expire ASC limit ".$count;
+        }
+        
         $result = $conn->query($sql);
         if($result->num_rows > 0){
             while($row = $result->fetch_assoc()) {
                 $ans.= listItems($row);
             }
         }
-    }  
+    }
     echo $ans;
 ?>
         </div>
         <div class="pager">
             <ul class="pagination">
-                <li class="disabled"><a href="#"><</a></li>
-                <li class="active"><a href="#">1</a></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">></a></li>
+<?
+    // display pager 
+    $pager = "";
+    
+    if(isset($_GET["p"]) && $_GET["p"] > 1){ // p > 2
+        $p = (int)$_GET["p"];
+        $pager.="<li><a href=\"?p=".($p-1)."\"><</a></li>";
+        for($i=$p-2; $i <= $p+2; $i++){
+            if($i == $p)
+                $pager.="<li class='active'><a href=\"?p=".$i."\">".$i."</a></li>";
+            else if($i > 0 && $i <= $pages)
+                $pager .= "<li><a href=\"?p=".$i."\">".$i."</a></li>";
+        }
+        if($p == $pages)
+            $pager .= "<li class='disabled'><a href='#'>></a></li>";
+        else
+            $pager .= "<li><a href=\"?p=".($p+1)."\">></a></li>";
+
+    } else{ // p=1
+        $pager .= "<li class='disabled'><a href='#'><</a></li>";
+        $pager .= "<li class='active'><a href=\"?p=1\">1</a></li>";
+        for($i=2; $i <= $pages && $i < 4; $i++){
+            $pager .= "<li><a href=\"?p=".$i."\">".$i."</a></li>";
+        }
+        if($pages == 1)
+            $pager .= "<li class='disabled'><a href=\"#\">></a></li>";
+        else
+            $pager .= "<li><a href=\"?p=2\">></a></li>";
+    } 
+    echo $pager;
+?>
             </ul>
         </div>
         </section>

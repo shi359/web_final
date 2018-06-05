@@ -7,6 +7,8 @@ function showName() {
 		for(var i=0; i < hidList.length; i++)
 			hidList[i].style.display="inline-block";
 	} else{
+        $("#name").prop('required',false);
+        $("#phone").prop('required',false);
 		for(var i=0; i < hidList.length; i++)
 			hidList[i].style.display="none";
 	}
@@ -52,25 +54,19 @@ function preview(event){
 $(document).ready(function() {
   var $sort = $("#sort");
   var $phone = $("#phone");
- // var $post = $("#post");
-   $sort.click(function(){
+  // sort item by date
+  $sort.click(function(){
      if($(this).attr("class") == "fa fa-caret-up"){
      	$(this).attr("class","fa fa-caret-down");
+        $.get("lost.php", {sort: "DESC"},function(result){
+               $(".row.item-list").html(result); 
+             });
      } else{
      	$(this).attr("class","fa fa-caret-up");
+        $.get("lost.php", {sort: "ASC"},function(result){
+               $(".row.item-list").html(result); 
+             },"html");
      }
    });	
 
-   /*
-    $post.click(function(){
-        var $anom = $("#anom").is(":checked");
-        var patt = /^09\d{8}$/;
-
-        // check form completion
-        if($anom == true && patt.test($("#phone").val())==false){
-                alert("電話號碼格式錯誤");
-        }
-        else
-            $.post("lost.php",$(".pop-form".serialize())); // post request
-    }); */
 }); 

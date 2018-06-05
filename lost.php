@@ -3,6 +3,49 @@
 if ($_SERVER['REQUEST_METHOD'] == "POST") 
      create();
 
+if(isset($_GET["sort"])){
+    require_once("config.php");
+    $method = $_GET["sort"];
+    $sql = "select * from lost where img is not null order by expire ".$method;
+    $ans = "";
+    $result = $conn->query($sql);
+    if($result->num_rows > 0){
+        while($row = $result->fetch_assoc()) {
+            $ans.= listItems($row);
+        }
+    }
+    echo $ans;
+    return;
+}
+
+
+// return a single item display
+function listItems($item){
+    $result = "";
+    // image
+    $result .= "<div class='row item'>";
+    $result .= "<div class='col-sm-5'>";
+    $result .= "<div class='item-img'>";
+    $result .= "<img src='./lost_photo/".$item["img"]."'>";
+    $result .= "</div>";
+    $result .= "</div>";
+    // description
+    $result .= "<div class='item-content col-sm-7'>";
+    $result .= "<h4>".$item["item"]."</h4>";
+    $result .= "<div class='place'>";
+    $result .= "<span class='item-place'>拾獲地點:</span>";
+    $result .= "<span class='place-dscrpt'>".$item["place"]."</span>";
+    $result .= "</div>";
+    $result .= "<div class='contact'>";
+    $result .= "<i class='fa fa-clock-o'></i>".$item["expire"]."</div>";
+    $result .= "<div class='contact'>";
+    $result .= "<i class='fa fa-user'></i>".$item["name"]."</div>";
+    $result .= "<div class='contact'>";
+    $result .= "<i class='fa fa-phone'></i>".$item["phone"]."</div>";
+    $result .= "</div>";
+    $result .= "</div>";
+    return $result;
+}
 // calculate deadline in sql format
 function calcDay($d){
     $dates = date('Y-m-d');
@@ -242,37 +285,12 @@ b></label>
                     <a href="./lost_rule.pdf" target="_blank">規章</a>
                 </div>    
             </div>    
+            
+            <div class='row item-list'>
 <?php
     require_once('config.php');
-    function listItems($item){
-        $result = "";
-        // image
-        $result .= "<div class='row item'>";
-        $result .= "<div class='col-sm-5'>";
-        $result .= "<div class='item-img'>";
-        $result .= "<img src='./lost_photo/".$item["img"]."'>";
-        $result .= "</div>";
-        $result .= "</div>";
-        // description
-        $result .= "<div class='item-content col-sm-7'>";
-        $result .= "<h4>".$item["item"]."</h4>";
-        $result .= "<div class='place'>";
-        $result .= "<span class='item-place'>拾獲地點:</span>";
-        $result .= "<span class='place-dscrpt'>".$item["place"]."</span>";
-        $result .= "</div>";
-        $result .= "<div class='contact'>";
-        $result .= "<i class='fa fa-clock-o'></i>".$item["expire"]."</div>";
-        $result .= "<div class='contact'>";
-        $result .= "<i class='fa fa-user'></i>".$item["name"]."</div>";
-        $result .= "<div class='contact'>";
-        $result .= "<i class='fa fa-phone'></i>".$item["phone"]."</div>";
-        $result .= "</div>";
-        $result .= "</div>";
-        return $result;
-    }
 
-    $ans = "<div class='row item-list'>";
-    
+    $ans = "";
     if(isset($_GET["search"])){
         // query database
         $keyword="%".$_GET["search"]."%";
@@ -298,10 +316,10 @@ b></label>
                 $ans.= listItems($row);
             }
         }
-    } 
-    $ans.= "</div>";
+    }  
     echo $ans;
 ?>
+        </div>
         <div class="pager">
             <ul class="pagination">
                 <li class="disabled"><a href="#"><</a></li>

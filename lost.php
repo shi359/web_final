@@ -5,22 +5,36 @@ if ($_SERVER['REQUEST_METHOD'] == "POST")
 
 if(isset($_GET["sort"])){
     require_once("config.php");
-    $method = $_GET["sort"];
-    $sql = "select * from lost where img is not null order by expire ".$method;
     $ans = "";
-    $result = $conn->query($sql);
-    if($result->num_rows > 0){
-        while($row = $result->fetch_assoc()) {
-            $ans.= listItems($row);
+    if($_GET["p"] == ""){
+        $stmt = $conn->prepare("select * from lost order by expire ".$_GET["sort"]);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        if($result->num_rows > 0){
+            while($row = $result->fetch_assoc()) {
+                $ans .= listItems($row);
+            }
         }
+    }
+    else{
+        $search = "%".$_GET["p"]."%";
+        $stmt = $conn->prepare("select * from lost where item like ? or place like ? order by expire ".$_GET["sort"]);
+        $stmt->bind_param("ss", $search, $search);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        if($result->num_rows > 0){
+            while($row = $result->fetch_assoc()) {
+                $ans .= listItems($row);
+            }
+        } 
     }
     echo $ans;
     return;
 }
-
-
 // return a single item display
 function listItems($item){
+    global $curr_item;
+    array_push($curr_item, $item["id"]);
     $result = "";
     // image
     $result .= "<div class='row item'>";
@@ -46,6 +60,7 @@ function listItems($item){
     $result .= "</div>";
     return $result;
 }
+
 // calculate deadline in sql format
 function calcDay($d){
     $dates = date('Y-m-d');
@@ -291,6 +306,8 @@ b></label>
     require_once('config.php');
 
     $ans = "";
+
+    // return a single item display
     if(isset($_GET["search"])){
         // query database
         $keyword="%".$_GET["search"]."%";
@@ -298,7 +315,6 @@ b></label>
         $stmt->bind_param("ss", $keyword, $keyword);
         $stmt->execute();    
         $result = $stmt->get_result();
-        
         if($result->num_rows > 0){
             while($row = $result->fetch_assoc()) {
                $ans .= listItems($row);
@@ -306,8 +322,8 @@ b></label>
         } else{
             $ans.="<h5 style='color: #aaaaaa'>找不到結果</h5>";
         }
-
-    } else{
+    } 
+    else{
         // list all lost items 
         $sql = "select * from lost where img is not null order by expire ASC";
         $result = $conn->query($sql);

@@ -51,19 +51,34 @@ function preview(event){
 	}
 }
 
+function getParameter(param){
+  var query = window.location.search;
+  var iLen = param.length;
+  var iStart = query.indexOf(param);
+  if (iStart == -1)
+　   return "";
+  iStart += iLen + 1;
+  var iEnd = query.indexOf("&", iStart);
+  if (iEnd == -1)
+　   return query.substring(iStart);
+  
+  return query.substring(iStart, iEnd);
+}
+
 $(document).ready(function() {
   var $sort = $("#sort");
   var $phone = $("#phone");
   // sort item by date
   $sort.click(function(){
+     var search = getParameter("search");
      if($(this).attr("class") == "fa fa-caret-up"){
      	$(this).attr("class","fa fa-caret-down");
-        $.get("lost.php", {sort: "DESC"},function(result){
-               $(".row.item-list").html(result); 
+        $.get("lost.php", {sort: "DESC", p: search},function(result){
+                $(".row.item-list").html(result); 
              });
      } else{
      	$(this).attr("class","fa fa-caret-up");
-        $.get("lost.php", {sort: "ASC"},function(result){
+        $.get("lost.php", {sort: "ASC", p: search},function(result){
                $(".row.item-list").html(result); 
              },"html");
      }

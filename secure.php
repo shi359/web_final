@@ -1,3 +1,4 @@
+<html>
 <head>
     <title>清華大學生活輔導組</title>
     <link rel="shortcut icon" type="image/png" href="logo.png" sizes="72x72" />
@@ -158,4 +159,4 @@
         </div>
     </footer>
 </body>
-
+</html>

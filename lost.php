@@ -311,7 +311,7 @@ b></label>
     if(isset($_GET["search"])){
         // query database
         $keyword="%".$_GET["search"]."%";
-        $stmt = $conn->prepare("select * from lost where item like ? or place like ?");
+        $stmt = $conn->prepare("select * from lost where item like ? or place like ? order by expire ASC");
         $stmt->bind_param("ss", $keyword, $keyword);
         $stmt->execute();    
         $result = $stmt->get_result();

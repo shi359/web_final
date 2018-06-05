@@ -1,0 +1,140 @@
+@media(max-width:768px){
+    
+    .cover{
+        display:none;
+    }
+} 
+
+
+/*************************
+ *      announcement     *       
+ *************************/
+ 
+.announce{
+    margin:1em;
+    font-size:2rem;
+    display: block;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.announce .anno_date{
+    padding: 0.8em;
+    background-color: rgb(121,38,108);
+    font-size: 2rem;
+    font-weight: bold;
+    color: rgba(255,255,255,1);
+    display: block;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.announce .anno_title{
+    padding: 0.8em;
+    color: rgba(0,0,0,1);
+    font-size: 2rem;
+    display: block;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+    text-align: left;
+}
+
+.announce:nth-child(odd) .anno_title{
+    background-color: rgba(152,152,152,0.1);
+}
+
+.announce:nth-child(even) .anno_title{
+    background-color: rgba(152,152,152,0.3);
+}
+
+.ano .anno_row{
+    margin: auto;
+    width: 80%;
+    float: center;
+}
+
+.more_anno{
+    width: 80%;
+    margin: auto;
+    font-size: 25px;
+    text-align: right;
+}
+
+.more_anno a{
+    color: #79266C;
+}
+
+/*************************
+ *    educate_target     *
+ *************************/
+
+.educate_target{
+    margin: 1em;
+    margin-top: 40px;
+    font-size:2rem;
+    display: block;
+}
+
+.educate_target .row{
+    width: 80%;
+    margin: 40px auto;
+    word-break: break-all;
+    text-align: left;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.educate_target .content{
+    width: 80%;
+    margin: 30px auto;
+    border: 2px rgba(121,31,108,1) solid;
+    box-shadow: 8px 8px 2px rgba(121,31,108,0.2);
+}
+
+/*************************
+ *        vision         *
+ *************************/
+
+.vision{
+    margin:1em;
+    font-size:2rem;
+    display: block;
+	text-overflow: ellipsis;
+}
+
+.vision .content{
+    width: 60%;
+    margin: 20px auto;
+    font-size: 2.5rem;
+    word-break: break-all;
+}
+
+
+.vision .content div{
+    padding: 5px;
+    margin: 5px auto;
+}
+
+.vision .content .row div:nth-child(4n+1){
+    background-color: rgba(121,31,108,1);
+    color: white;
+}
+
+.vision .content .row div:nth-child(4n+3){
+    background-color: rgba(121,31,108,0.6);
+    color: white;
+}
+
+.vision .content .row div:nth-child(4n+2){
+    background-color: rgba(152,152,152,0.3);
+    color: black;
+}
+
+
+.vision .content .row div:nth-child(4n){
+    background-color: rgba(152,152,152,0.1);
+    color: black;
+}

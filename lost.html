@@ -109,23 +109,23 @@
 						      	<form class="pop-form" action="none">
 						      		<div class="fillup">
 							      		<label for="item"><b>項目</b></label>
-							      		<input type="text" maxlength="25" placeholder="項目" required>
+							      		<input type="text" id="item" maxlength="25" placeholder="項目" required>
 						      		</div>
 						      		<div class="fillup">
 						      			<label for="place"><b>拾獲地點</b></label>
-						      			<input type="text" maxlength="15" placeholder="地點" required>
+						      			<input type="text" id="place" maxlength="15" placeholder="地點" required>
 						      		</div>
 						      		<div class="fillup">
 						      			<label for="anom"><b>是否匿名</b></label>
-						      			<input type="checkbox" id="anom" onclick="showName()">是(請將物品送至教官室)<br>
+						      			<input type="checkbox" id="anom" onclick="showName()">否(若選擇匿名請將物品送至教官室)<br>
 						      		</div>
 						      		<div class="fillup">
 						      			<label for="name" class="hid"><b>聯絡姓名</b></label>
-						      			<input class="hid" type="text" maxlength="10" placeholder="姓名" required>
+						      			<input class="hid" type="text" id="name" maxlength="10" placeholder="姓名" required>
 						      		</div>
 						      		<div class="fillup">	
 						      			<label for="phone" class="hid"><b>聯絡電話</b></label>
-						      			<input class="hid" type="text" maxlength="15" placeholder="09xx" required>
+						      			<input class="hid" type="text" id="phone" maxlength="15" placeholder="09xx" required>
 						      		</div>
 						      		<div class="fillup">	
 							      		<label for="expire" class="hid"><b>到期時間</b></label>
@@ -145,7 +145,7 @@
 						      </div>
 						      <div class="modal-footer">
 						        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-						        <button type="button" class="btn btn-primary">Save changes</button>
+						        <button type="button" id="post" class="btn btn-primary" onclick="postLost()">Save changes</button>
 						      </div>
 						    </div>
 						</div>

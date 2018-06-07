@@ -9,7 +9,6 @@ body{
     display: block;
     background-color: rgba(255,255,255,0.8);
     width: 100%;
-    margin-bottom: 1rem;
 }
 
 .roof img{
@@ -24,11 +23,42 @@ body{
     margin: 0 0 0 1.5rem;
 }
 
-.dept ul{
+.dept{
+    background-image: url("./banner.png");
+    background-repeat: repeat-x;
+    background-position: left bottom; 
+}
+
+.dept div{
+    margin: 10px 0;
+}
+
+.dept .college-left {
+    margin-bottom: 0px;
+}
+
+.dept .college-left ul{
+    float: left;
+}
+
+.dept .college-left .dpt, .dept .college-left .college{
+    font-size: 28pt;
+}
+
+.dept .college-left .college-en{
+    font-size: 13pt;
+}
+
+.dept .college-right {
+    margin-top: 0px;
+}
+
+.dept .college-right ul{
     float: right;
-    vertical-align: bottom;
-    list-style-type: none;
-    margin: 1rem 2rem 0 0;
+}
+
+.dept ul{
+    margin: 0;
     padding: 0;
     font-size: 1.5rem;
 }

@@ -2,7 +2,7 @@
     session_start();
     if($_SESSION['uid']=="" || $_SESSION['aDMinD0sA']!="dosaadmin") header("Location: ./index.php");
     
-    require('db.php');
+    require('config.php');
 ?>
 
 <head>

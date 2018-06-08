@@ -1,8 +1,36 @@
 .content{
-    margin:auto;
-    width:80%;
-    text-align:left;
-    font-size:1.4em;
+    margin-top: -2em;
+    display: inline-block;
+    /*test*/
+    margin: auto;
+    width: 80%;
+    text-align: left;
+}
+
+.content hr{
+    width: 100%;
+}
+
+.article{
+    width: 90%;
+    display: none;
+    margin-top: 1.5em;
+    line-height: 1.8em;
+    font-size: 1.5em;
+    clear: both;
+}
+
+.subtitle{
+    cursor: pointer;
+    display: block;
+    clear: both;
+    color: #791F6C;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.subtitle i{
+    float: right;
 }
 
 .contact{
@@ -19,6 +47,7 @@
     padding: 0.1em 0;
     color: #791F6C;
 }
+
 
 .content hr{
     width: 100%;
@@ -37,4 +66,14 @@
 .content h4{
     color: #888888;
     font-weight: bold;
+}
+
+.content table,th,td{
+    padding: 0.5em;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.content table tr:nth-child(odd){
+    background-color:#EEE8AA;
 }

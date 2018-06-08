@@ -305,7 +305,7 @@ function create(){
 <?php
     require_once('config.php');
 
-    $limit = 3;
+    $limit = 10;
     $ans = "";
     // return a single item display
     if(isset($_GET["k"])){
@@ -325,7 +325,6 @@ function create(){
             $sql = "select * from lost where item like ? or place like ? order by expire ASC limit ".$offset.", ".$count;
             $stmt = $conn->prepare($sql);
         } else{ 
-            $ans.= $records;
             $count = min($limit, $records);
             $sql = "select * from lost where item like ? or place like ? order by expire ASC limit ".$count;
             $stmt = $conn->prepare($sql);

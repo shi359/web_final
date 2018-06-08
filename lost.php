@@ -31,6 +31,7 @@ if(isset($_GET["sort"])){
     echo $ans;
     return;
 }
+
 // return a single item display
 function listItems($item){
     global $curr_item;
@@ -220,67 +221,66 @@ function create(){
                     <hr>
                 </div>
                 <div>
-                    <!-- form -->
-                    <button type="button" class="post btn btn-primary btn-lg" data-toggle="modal" data-target="#postModal">拾獲失物</button>
-                    <div class="modal fade" id="postModal" tabindex="-1" role="dialog" >
-						<div class="modal-dialog" role="document">
-						    <div class="modal-content">
-						      <div class="modal-header">
-						        <h1 class="modal-title" id="exampleModalLabel">失物通報</h1>
-						      </div>
-						      <form class="pop-form" method="post" enctype="multipart/form-data">
-						      <div class="modal-body">
-						      		<div class="fillup">
-							      		<label for="item"><b>項目</b></label>
-							      		<input type="text" id="item" name="item" maxlength="25" placeholder="項目" required>
-						      		</div>
-						      		<div class="fillup">
-						      			<label for="place"><b>拾獲地點</b></label>
-                                        <input type="text" id="place" name="place" maxlength="15" placeholder="地點" required>
-						      		</div>
-						      		<div class="fillup">
-                                        <label for="anom"><b>是否匿名</b></label>
-
-
-						      			<input type="checkbox" id="anom" name="anom" onclick="showName()">否(若匿名請將物品送至教官室)<br>
-						      		</div>
-						      		<div class="fillup">
-
-                                        <label for="name" class="hid"><b>聯絡姓名</
-b></label>
-						      			<input class="hid" type="text" id="name" name="name" maxlength="10" placeholder="姓名">
-						      		</div>
-						      		<div class="fillup">	
-                                        <label for="phone" class="hid"><b>聯絡電話</b></label
->
-						      			<input class="hid" type="tel" id="phone" name="phone" maxlength="15" placeholder="09xx" pattern='^09\d{8}$' >
-						      		</div>
-						      		<div class="fillup">	
-                                        <label for="expire" class="hid"><b>到期時間</b></label>
-
-							      		<select class="hid" id="days" name="days">
-
-                                            <option value="3"> 3 天 </option>
-							      			<option value="7"> 1 週 </option>
-							      			<option value="14"> 2 週 </option>
-							      			<option value="30"> 1 月 </option>
-							      		</select>
+                <!-- form -->
+                <?php
+                    require_once('config.php');
+                    $s = "select post from allowPost where name=\"post\"";
+                    $conn->query($s);
+                    $allow = $conn->query($s)->fetch_assoc()["post"];
+                    if($allow == "1")
+                        echo "<button type=\"button\" class=\"post btn btn-primary btn-lg\" data-toggle=\"modal\" data-target=\"#postModal\">拾獲失物</button>
+                                <div class=\"modal fade\" id=\"postModal\" tabindex=\"-1\" role=\"dialog\" >
+						            <div class=\"modal-dialog\" role=\"document\">
+						                <div class=\"modal-content\">
+						                    <div class=\"modal-header\">
+						                    <h1 class=\"modal-title\" id=\"exampleModalLabel\">失物通報</h1>
+						                </div>
+						            <form class=\"pop-form\" method=\"post\" enctype=\"multipart/form-data\">
+						            <div class=\"modal-body\">
+						      		    <div class=\"fillup\">
+							      		    <label for=\"item\"><b>項目</b></label>
+							      		    <input type=\"text\" id=\"item\" name=\"item\" maxlength=\"25\" placeholder=\"項目\" required>
+						      		    </div>
+						      		    <div class=\"fillup\">
+						      			    <label for=\"place\"><b>拾獲地點</b></label>
+                                            <input type=\"text\" id=\"place\" name=\"place\" maxlength=\"15\" placeholder=\"地點\" required>
+						      		    </div>
+						      		    <div class=\"fillup\">
+                                            <label for=\"anom\"><b>是否匿名</b></label>
+						      			    <input type=\"checkbox\" id=\"anom\" name=\"anom\" onclick=\"showName()\">否(若匿名請將物品送至教官室)<br>
+						      		    </div>
+						      		    <div class=\"fillup\">
+                                            <label for=\"name\" class=\"hid\"><b>聯絡姓名</b></label>
+						      			    <input class=\"hid\" type=\"text\" id=\"name\" name=\"name\" maxlength=\"10\" placeholder=\"姓名\">
+						      		    </div>
+						      		    <div class=\"fillup\">	
+                                            <label for=\"phone\" class=\"hid\"><b>聯絡電話</b></label>
+						      			    <input class=\"hid\" type=\"tel\" id=\"phone\" name=\"phone\" maxlength=\"15\" placeholder=\"09xx\" pattern='^09\d{8}$' >
+						      		    </div>
+						      		    <div class=\"fillup\">	
+                                            <label for=\"expire\" class=\"hid\"><b>到期時間</b></label>
+							      		    <select class=\"hid\" id=\"days\" name=\"days\">
+                                            <option value=\"3\"> 3 天 </option>
+							      			<option value=\"7\"> 1 週 </option>
+							      			<option value=\"14\"> 2 週 </option>
+							      			<option value=\"30\"> 1 月 </option>
+							      		    </select>
 							      	</div>
-							      	<div class="fillup">	
-
-                                        <label for="phto"><b>照片</b></label>
-						      			<input type="file" name="photo" id="upload" required onchange="preview(event)">
-						      			<img id="prevw" src="2.jpg">
+							      	<div class=\"fillup\">	
+                                        <label for=\"phto\"><b>照片</b></label>
+						      			<input type=\"file\" name=\"photo\" id=\"upload\" required onchange=\"preview(event)\">
+						      			<img id=\"prevw\" src=\"2.jpg\">
 						      		</div>	
 						      </div>
-						      <div class="modal-footer">
-						        <button type="button" class="btn btn-secondary" data-dismiss="modal">關閉</button>
-						        <button type="submit" id="post" class="btn btn-primary">發佈</button>
-						      </div>
-                   </form>
+						        <div class=\"modal-footer\">
+						            <button type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">關閉</button>
+						            <button type=\"submit\" id=\"post\" class=\"btn btn-primary\">發佈</button>
+						        </div>
+                            </form>
 						    </div>
 						</div>
-					</div> 
+					</div>" 
+                    ?>
                 </div>
             </div>   
             <!-- item bar -->

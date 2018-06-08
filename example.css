@@ -77,3 +77,7 @@
 .content table tr:nth-child(odd){
     background-color:#EEE8AA;
 }
+
+.content a{
+    color: inherit;
+}

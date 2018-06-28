@@ -1,0 +1,28 @@
+<section class="contain">
+    <div>
+        <h1>學產低收</h1>
+        <hr>
+        <div class="content">
+            <div class="subtitle">
+              申請方式
+                <i class="fa fa-chevron-down"></i>
+            </div>
+            <div class="article">
+              <div class="list_div">
+                  <ol>
+                    <li>大學部低收入戶同學於每學期初，依公告時間備妥相關文件，送至生輔組申請。</li>
+                    <li>申請文件:
+                      <ol class="type_a">
+                        <li>申請書</li>
+                        <li>低收入戶證明正本</li>
+                        <li>成績單正本(前學期總成績及格，一年級新生上學期免審核)</li>
+                        <li>獎懲證明(至生輔組申請，德性評量無小過以上處分)</li>
+                      </ol>
+                    </li>
+                    <li>申請資格請參閱相關下載。</li>
+                  </ol>
+              </div>
+            </div>
+        </div>
+    </div>
+</section>

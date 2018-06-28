@@ -1,0 +1,48 @@
+<section class="contain">
+    <div>
+        <h1>校外賃居</h1>
+        <hr>
+        <div class="content" style="font-size: 1.3em">
+            <h3>租屋網</h3>
+            <div class="list_div">
+               <ol>
+                 <li><a href="http://house.nfu.edu.tw/" target="_blank">FORMOSA 雲端生活租屋網</a></li>
+                 <li>房東管理程序
+                   <table>
+                     <thead>
+                     <tr>
+                       <th>舊房東</th>
+                       <th>新房東</th>
+                     </tr>
+                     </thead>
+                     <tbody><tr>
+                       <td style="text-align: left">
+                           新房屋申請: 填寫相關下載的申請表後 e-mail 給承辦人
+                           
+                       </td>
+                       <td style="text-align: left">
+                         <ol>
+                           <li>填寫相關下載的申請表後 e-mail 給承辦人</li>
+                           <li>核可後將給予帳號密碼</li>
+                           <li>進入租屋網管理房屋房客</li>
+                         </ol>  
+                       </td>
+                     </tr>
+                   </tbody></table>
+                 </li>
+               </ol>
+           </div>
+           <h3>相關連結</h3>
+           <div class="list_div">
+               <ul class="no_bullet">
+                 <li><i class="fa fa-link"></i><a href="http://www.tmm.org.tw/" target="_blank">崔媽媽基金會</a></li>
+                 <li><i class="fa fa-link"></i><a href="http://rent.591.com.tw/house-rentSale-4.html" target="_blank">591租屋網</a></li>
+                 <li><i class="fa fa-link"></i><a href="http://happyrent.rakuya.com.tw/" target="_blank">樂屋網</a></li>
+                 <li><i class="fa fa-link"></i><a href="http://www.lovehouse.68h.tw/" target="_blank">新竹臻愛租屋網</a></li>
+                 <li><i class="fa fa-link"></i><a href="http://www.chrb.com.tw/tenement.php" target="_blank">大管家租屋網</a></li>
+                 <li><i class="fa fa-link"></i><a href="http://rental.zhupiter.com/ads-mashup.php" target="_blank">諸彼特租屋資訊網</a></li>
+              </ul>
+           </div>
+       </div>
+    </div>
+</section>

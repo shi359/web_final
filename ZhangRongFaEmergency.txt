@@ -1,0 +1,20 @@
+<section class="contain">
+    <div>
+        <h1>張榮發慈善基金會急難救助</h1>
+        <hr>
+        <div class="content">
+            <div class="subtitle">
+                說明
+                <i class="fa fa-chevron-down"></i>
+            </div>
+            <div class="article">
+                <div class="list_div">
+                  <ol>
+                    <li>為扶助因天然災害、意外事故、重病、死亡或家庭變故，而生活陷入困境之中低入 戶或家庭清寒者度過難關。</li>
+                    <li>凡需申請醫療及喪葬補助者，請於變故發生之日起三個月內提出申請，急難、災害 救助請於六個月內提出，該基金會不接受個人申請，須經學校(各單位)轉介。</li>
+                  </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

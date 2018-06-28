@@ -1,0 +1,43 @@
+<section class="contain">
+    <div>
+        <h1>生活助學金</h1>
+        <hr>
+        <div class="content">
+            <div class="subtitle">
+                 生活助學金申請作業
+                <i class="fa fa-chevron-down"></i>
+            </div>
+            <div class="article">
+                <div class="list_div">
+                  <ol>
+                    <li>實施對象: 105學年度學雜費減免(中)低收身分或教育部弱勢助學金審查合格者</li>
+                    <li>實施方式:
+                      <ul>
+                        <li>服務時程：自107年02月01日至107年07月31日止</li>
+					    <li>服務時數：每月計算一次，每週服務時數以8小時為上限</li>
+					    <li>服務單位與員額：本校9個學院與清華學院，計每學院錄取2名、清華學院1名，共21名</li>
+                      </ul>
+                    </li>
+                    <li>申請程序:
+                      <ol type="a" class="type_a">
+					    <li>申請期間：106年11月1日至106年11月15日止</li>
+					    <li>填妥申請表格及檢附前一學期成績單，向所屬學院或清華學院提出申請</li>
+					    <li>錄取名單預定於12月中旬公告</li>
+                      </ol>
+                    </li>
+                  </ol>
+               </div>
+            </div>
+            <hr>
+            <div class="subtitle">
+                 錄取名單
+                <i class="fa fa-chevron-down"></i>
+            </div>
+            <div class="article">
+                <div class="list_div">
+                    106學年第2學期生活助學金錄取名單請參閱相關下載。
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

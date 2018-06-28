@@ -1,16 +1,16 @@
 <head>
     <title>清華大學生活輔導組</title>
-    <link rel="shortcut icon" type="image/png" href="logo.png" sizes="72x72" />
+    <link rel="shortcut icon" type="image/png" href="/src/pic/logo.png" sizes="72x72" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="./fix_layout.css">
-    <link rel="stylesheet" href="./echinacea.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script type="text/javascript" language="javascript" src="./fix_layout.js" charset="UTF-8"></script>
-    <script type="text/javascript" language="javascript" src="./echinacea.js" charset="UTF-8"></script>
+    <link rel="stylesheet" href="/src/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/src/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/src/css/fix_layout.css">
+    <link rel="stylesheet" href="/src/css/echinacea.css">
+    <script src="/src/js/jquery.min.js"></script>
+    <script src="/src/js/bootstrap.min.js"></script>
+    <script type="text/javascript" language="javascript" src="/src/js/fix_layout.js" charset="UTF-8"></script>
+    <script type="text/javascript" language="javascript" src="/src/js/echinacea.js" charset="UTF-8"></script>
 </head>
 <body>
 <?php
@@ -28,7 +28,7 @@
                 </div>
                 <div class="article">
                     <div class="pic">
-                        <img src="http://meo22.wwlc.nthu.edu.tw/dosa/images/ec_logo.png"></img>
+                        <img src="/src/pic/ec_logo.png"></img>
                     </div>
                     <p>本校為營造拒毒反毒純淨校園，讓學生健康安全成長，是近年來維護校園安全工作首要目標，鑒於校園毒品氾濫對青年學子危害甚大，本校自民國 79 年成立春暉專案推動小組以來，陸續推動多項工作，然近年來社會環境變遷，新興毒品問題日新月異，本校依教育部指導，自 101 年起宣示「紫錐花運動」正式啟動，並參與桃竹苗分區辦理「紫錐花教師節明天會更好敬師傳唱競賽」、「紫錐花元年口號創意比賽」、「紫錐花敬親賀卡比賽」及鼓勵服務學習同學-推動紫錐花活力小幫手至新竹縣市國中小學實施紫錐花運動宣導，並獲各校師生肯定。 紫錐花設計理念為用堅毅的勇氣淨化對毒品的依賴，提倡健康互愛的心，綻放生命的光彩。紫錐花標章的標準色設計以絳紫色代表優雅與堅毅，米駝色代表清淨與健康，金黃色代表熱情與榮耀。紫錐花運動以「反毒總動員，由校園推向社會，由國內推向國際，全球一起來」為運動總綱，採「響應聯合國國際反毒日，臺灣發起紫錐花運動，邀請您共同推廣紫錐花標幟」為運動方法，為延續過往教育部及本校春暉反毒成效，及全面具體推動紫錐花運動，本校依教育部 102 年 3 月 4 日臺教學(五)字第 1020027408B 號函頒「教育部深化推動紫錐花運動實施計畫」特訂定本計畫，並取代春暉專案計畫，以校園推動紫錐花運動為起點，規劃多元且具創意之宣導活動，讓紫錐花運動「健康、反毒、愛人愛己」意涵，成為校園、社會、國際反毒工作永久代名詞。
                     </p>
@@ -169,25 +169,25 @@
                         <div class="row">
                             <div class="col-sm-3">
                                 <div class="gallery_pic">
-                                    <img src="http://meo22.wwlc.nthu.edu.tw/dosa/images/spring/drog_h.png"></img>
+                                    <img src="/src/pic/drug_1.png"></img>
                                 </div>
                                 <div class="instruc">海洛因</div>
                             </div>
                             <div class="col-sm-3">
                                 <div class="gallery_pic">
-                                    <img src="http://meo22.wwlc.nthu.edu.tw/dosa/images/spring/drog_c.png"></img>
+                                    <img src="/src/pic/drug_2.png"></img>
                                 </div>
                                 <div class="instruc">古柯鹼</div>
                             </div>
                             <div class="col-sm-3">
                                 <div class="gallery_pic">
-                                    <img src="http://meo22.wwlc.nthu.edu.tw/dosa/images/spring/drog_r.png"></img>
+                                    <img src="/src/pic/drug_3.png"></img>
                                 </div>
                                 <div class="instruc">鴉片</div>
                             </div>
                             <div class="col-sm-3">
                                 <div class="gallery_pic">
-                                    <img src="http://meo22.wwlc.nthu.edu.tw/dosa/images/spring/drog_m.png"></img>
+                                    <img src="/src/pic/drug_4.png"></img>
                                 </div>
                                 <div class="instruc">嗎啡</div>
                             </div>
@@ -195,25 +195,25 @@
                         <div class="row">
                             <div class="col-sm-3">
                                 <div class="gallery_pic">
-                                    <img src="http://meo22.wwlc.nthu.edu.tw/dosa/images/spring/drog_c2.png"></img>
+                                    <img src="/src/pic/drug_5.png"></img>
                                 </div>
                                 <div class="instruc">古柯鹼生長</div>
                             </div>
                             <div class="col-sm-3">
                                 <div class="gallery_pic">
-                                    <img src="http://meo22.wwlc.nthu.edu.tw/dosa/images/spring/drog_e.png"></img>
+                                    <img src="/src/pic/drug_6.png"></img>
                                 </div>
                                 <div class="instruc">罌粟花</div>
                             </div>
                             <div class="col-sm-3">
                                 <div class="gallery_pic">
-                                    <img src="http://meo22.wwlc.nthu.edu.tw/dosa/images/spring/drog_an.png"></img>
+                                    <img src="/src/pic/drug_7.png"></img>
                                 </div>
                                 <div class="instruc">甲基安非他命</div>
                             </div>
                             <div class="col-sm-3">
                                 <div class="gallery_pic">
-                                    <img src="http://meo22.wwlc.nthu.edu.tw/dosa/images/spring/drog_an2.png"></img>
+                                    <img src="/src/pic/drug_8.png"></img>
                                 </div>
                                 <div class="instruc">安非他命</div>
                             </div>
@@ -221,25 +221,25 @@
                         <div class="row">
                             <div class="col-sm-3">
                                 <div class="gallery_pic">
-                                    <img src="http://meo22.wwlc.nthu.edu.tw/dosa/images/spring/drog_da.png"></img>
+                                    <img src="/src/pic/drug_9.png"></img>
                                 </div>
                                 <div class="instruc">大麻</div>
                             </div>
                             <div class="col-sm-3">
                                 <div class="gallery_pic">
-                                    <img src="http://meo22.wwlc.nthu.edu.tw/dosa/images/spring/drog_da2.png"></img>
+                                    <img src="/src/pic/drug_10.png"></img>
                                 </div>
                                 <div class="instruc">大麻葉</div>
                             </div>
                             <div class="col-sm-3">
                                 <div class="gallery_pic">
-                                    <img src="http://meo22.wwlc.nthu.edu.tw/dosa/images/spring/drog_mdma.png"></img>
+                                    <img src="/src/pic/drug_11.png"></img>
                                 </div>
                                 <div class="instruc">MDMA<br><font class="sub_name">(搖頭丸、快樂丸)</font></div>
                             </div>
                             <div class="col-sm-3">
                                 <div class="gallery_pic">
-                                    <img src="http://meo22.wwlc.nthu.edu.tw/dosa/images/spring/drog_w.png"></img>
+                                    <img src="/src/pic/drug_12.png"></img>
                                 </div>
                                 <div class="instruc">白板</div>
                             </div>
@@ -247,25 +247,25 @@
                         <div class="row">
                             <div class="col-sm-3">
                                 <div class="gallery_pic">
-                                    <img src="http://meo22.wwlc.nthu.edu.tw/dosa/images/spring/drog_anm.png"></img>
+                                    <img src="/src/pic/drug_13.png"></img>
                                 </div>
                                 <div class="instruc">天使塵<br><font class="sub_name">(苯環利定、PCP)</font></div>
                             </div>
                             <div class="col-sm-3">
                                 <div class="gallery_pic">
-                                    <img src="http://meo22.wwlc.nthu.edu.tw/dosa/images/spring/drog_ghb.png"></img>
+                                    <img src="/src/pic/drug_14.png"></img>
                                 </div>
                                 <div class="instruc">液用 GHB</div>
                             </div>
                             <div class="col-sm-3">
                                 <div class="gallery_pic">
-                                    <img src="http://meo22.wwlc.nthu.edu.tw/dosa/images/spring/drog_s.png"></img>
+                                    <img src="/src/pic/drug_15.png"></img>
                                 </div>
                                 <div class="instruc">搖腳丸、一粒沙</div>
                             </div>
                             <div class="col-sm-3">
                                 <div class="gallery_pic">
-                                    <img src="http://meo22.wwlc.nthu.edu.tw/dosa/images/spring/drog_k.png"></img>
+                                    <img src="/src/pic/drug_16.png"></img>
                                 </div>
                                 <div class="instruc">Ketamine<br><font class="sub_name">(K他命)</font></div>
                             </div>
@@ -273,25 +273,25 @@
                         <div class="row">
                             <div class="col-sm-3">
                                 <div class="gallery_pic">
-                                    <img src="http://meo22.wwlc.nthu.edu.tw/dosa/images/spring/drog_ch.png"></img>
+                                    <img src="/src/pic/drug_17.png"></img>
                                 </div>
                                 <div class="instruc">青發、紅中</div>
                             </div>
                             <div class="col-sm-3">
                                 <div class="gallery_pic">
-                                    <img src="http://meo22.wwlc.nthu.edu.tw/dosa/images/spring/drog_fm2.png"></img>
+                                    <img src="/src/pic/drug_18.png"></img>
                                 </div>
                                 <div class="instruc">FM2</div>
                             </div>
                             <div class="col-sm-3">
                                 <div class="gallery_pic">
-                                    <img src="http://meo22.wwlc.nthu.edu.tw/dosa/images/spring/drog_sle.png"></img>
+                                    <img src="/src/pic/drug_19.png"></img>
                                 </div>
                                 <div class="instruc">一粒眠</div>
                             </div>
                             <div class="col-sm-3">
                                 <div class="gallery_pic">
-                                    <img src="http://meo22.wwlc.nthu.edu.tw/dosa/images/spring/drog_b.png"></img>
+                                    <img src="/src/pic/drug_20.png"></img>
                                 </div>
                                 <div class="instruc">蝴蝶片</div>
                             </div>
@@ -299,19 +299,19 @@
                         <div class="row">
                             <div class="col-sm-3">
                                 <div class="gallery_pic">
-                                    <img src="http://meo22.wwlc.nthu.edu.tw/dosa/images/spring/drog_ann.png"></img>
+                                    <img src="/src/pic/drug_21.png"></img>
                                 </div>
                                 <div class="instruc">安定、煩寧</div>
                             </div>
                             <div class="col-sm-3">
                                 <div class="gallery_pic">
-                                    <img src="http://meo22.wwlc.nthu.edu.tw/dosa/images/spring/drog_sup.png"></img>
+                                    <img src="/src/pic/drug_22.png"></img>
                                 </div>
                                 <div class="instruc">強力膠</div>
                             </div>
                             <div class="col-sm-3">
                                 <div class="gallery_pic">
-                                    <img src="http://meo22.wwlc.nthu.edu.tw/dosa/images/spring/drog_air.png"></img>
+                                    <img src="/src/pic/drug_23.png"></img>
                                 </div>
                                 <div class="instruc">氧化亞氮<br><font class="sub_name">(笑氣)</font></div>
                             </div>
@@ -332,21 +332,21 @@
                     <div class="container gallery">
                         <div class="row">
                             <div class="col-sm-6">
-                                <div class="gallery_pic"><img src="http://meo22.wwlc.nthu.edu.tw/dosa/images/enc_pic_1.jpg"></img></div>
+                                <div class="gallery_pic"><img src="/src/pic/enc_pic_1.jpg"></img></div>
                                 <div class="instruc">新生領航營拒菸反毒宣導</div>
                             </div>
                             <div class="col-sm-6">
-                                <div class="gallery_pic"><img src="http://meo22.wwlc.nthu.edu.tw/dosa/images/enc_pic_2.jpg"></img></div>
+                                <div class="gallery_pic"><img src="/src/pic/enc_pic_2.jpg"></img></div>
                                 <div class="instruc">紫金花活動宣導旗</div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-sm-6">
-                                <div class="gallery_pic"><img src="http://meo22.wwlc.nthu.edu.tw/dosa/images/enc_pic_3.jpg"></img></div>
+                                <div class="gallery_pic"><img src="/src/pic/enc_pic_3.jpg"></img></div>
                                 <div class="instruc">國防鐵人賽拒毒反菸宣導</div>
                             </div>
                             <div class="col-sm-6">
-                                <div class="gallery_pic"><img src="http://meo22.wwlc.nthu.edu.tw/dosa/images/enc_pic_4.jpg"></img></div>
+                                <div class="gallery_pic"><img src="/src/pic/enc_pic_4.jpg"></img></div>
                                 <div class="instruc">校慶18尖山健走拒毒反菸宣導</div>
                             </div>
                         </div>
@@ -363,22 +363,22 @@
                     <div class="container gallery">
                         <div class="row">
                             <div class="col-sm-6">
-                                <div class="gallery_pic"><img src="http://meo22.wwlc.nthu.edu.tw/dosa/images/pic1_head.jpg"></img></div>
-                                <div class="instruc"><a href="">大庒國小宣導相片集</a></div>
+                                <div class="gallery_pic"><img src="/src/pic/enc_pic1_head.jpg"></img></div>
+                                <div class="instruc"><a href="./file/echinacea/大庄國小宣導相片.rar">大庄國小宣導相片集</a></div>
                             </div>
                             <div class="col-sm-6">
-                                <div class="gallery_pic"><img src="http://meo22.wwlc.nthu.edu.tw/dosa/images/pic2_head.jpg"></img></div>
-                                <div class="instruc"><a href="">育賢國中宣導相片集</a></div>
+                                <div class="gallery_pic"><img src="/src/pic/enc_pic2_head.jpg"></img></div>
+                                <div class="instruc"><a href="/file/echinacea/育賢國中宣導相片.rar">育賢國中宣導相片集</a></div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-sm-6">
-                                <div class="gallery_pic"><img src="http://meo22.wwlc.nthu.edu.tw/dosa/images/pic3_head.jpg"></img></div>
-                                <div class="instruc"><a href="">陸豐國小宣導相片集</a></div>
+                                <div class="gallery_pic"><img src="/src/pic/enc_pic3_head.jpg"></img></div>
+                                <div class="instruc"><a href="/file/echinacea/陸豐國小宣導相片.rar">陸豐國小宣導相片集</a></div>
                             </div>
                             <div class="col-sm-6">
-                                <div class="gallery_pic"><img src="http://meo22.wwlc.nthu.edu.tw/dosa/images/pic4_head.jpg"></img></div>
-                                <div class="instruc"><a href="">新埔國小宣導相片集</a></div>
+                                <div class="gallery_pic"><img src="/src/pic/enc_pic4_head.jpg"></img></div>
+                                <div class="instruc"><a href="/file/echinacea/新埔國小宣導相片.rar">新埔國小宣導相片集</a></div>
                             </div>
                         </div>
                     </div>

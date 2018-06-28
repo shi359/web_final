@@ -4,16 +4,16 @@
 
 <head>
     <title>清華大學生活輔導組</title>
-    <link rel="shortcut icon" type="image/png" href="logo.png" sizes="72x72" />
+    <link rel="shortcut icon" type="image/png" href="/src/pic/logo.png" sizes="72x72" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="./fix_layout.css">
-    <link rel="stylesheet" href="./announce.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script type="text/javascript" language="javascript" src="./fix_layout.js" charset="UTF-8"></script>
+    <link rel="stylesheet" href="/src/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/src/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/src/css/fix_layout.css">
+    <link rel="stylesheet" href="src/css/announce.css">
+    <script src="/src/js/jquery.min.js"></script>
+    <script src="/src/js/bootstrap.min.js"></script>
+    <script type="text/javascript" language="javascript" src="/src/js/fix_layout.js" charset="UTF-8"></script>
 </head>
 <body>
 <?php
@@ -27,7 +27,7 @@
             <div class="anno_row">
 <?php
     
-    $sql = 'select * from announce';
+    $sql = 'select * from announce order by (start_time) DESC';
     $que = $conn->query($sql);
     while($row = $que->fetch_assoc())
     {

@@ -1,0 +1,17 @@
+<section class="contain">
+    <div>
+        <h1>安心就學方案</h1>
+        <hr>
+        <div class="content">
+            <div class="subtitle">
+                說明
+                <i class="fa fa-chevron-down"></i>
+            </div>
+            <div class="article">
+                <div class="list_div">
+                    8 月 1 日凌晨高雄發生氣爆案，造成嚴重傷亡的不幸事件。為協助受災同學及家園重建渡過此艱難時刻，本校提供「安心就學專案」補助，以適時幫助同學安心就學。
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

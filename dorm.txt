@@ -1,0 +1,19 @@
+<section class="contain">
+        <div>
+            <h1>校內住宿須知</h1>
+            <hr>
+            <div class="content" style="font-size: 1.3em">
+             <h3>注意事項</h3>
+             <div class="list_div">
+               <ol>
+                 <li>各齋寢室走廊上請勿放置任何物品，以免影響消防逃生安全。</li>
+                 <li>請住宿同學在寢室活動時，儘量放低聲音，以免妨礙同學作息。</li>
+               </ol>
+             </div>
+             <h3>相關法規</h3>
+             <div class="list_div">
+                <i class="fa fa-link"></i><a href="http://sthousing.web.nthu.edu.tw/files/11-1159-3416.php" target="_blank">住宿法規</a>
+             </div>
+           </div>
+        </div>
+    </section>

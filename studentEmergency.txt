@@ -1,0 +1,17 @@
+<section class="contain">
+    <div>
+        <h1>教育部學產基金急難慰問金</h1>
+        <hr>
+        <div class="content">
+            <div class="subtitle">
+                慰助對象
+                <i class="fa fa-chevron-down"></i>
+            </div>
+            <div class="article">
+                <div class="list_div">
+                    限學士班同學，凡符合教育部學產基金設置急難慰問金實施要點者，請檢附相關資料到生輔組辦理。
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

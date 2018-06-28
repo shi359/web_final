@@ -13,7 +13,7 @@
         
         while($row = $que->fetch_assoc())
         {
-            if($row['user']==$username && $row['password']==/*hash("sha256",*/ $password)
+            if($row['user']==$username && $row['password']==hash("sha256", $password))
             {
                 $_SESSION['uid'] = $row['user'];
                 $_SESSION['aDMinD0sA']="dosaadmin";
@@ -43,10 +43,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="./login.css">
+    <link rel="stylesheet" href="/src/css/login.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script  src="./login.js"></script>
+    <script  src="/src/js/login.js"></script>
 </head>
 <body>
     <div class="container">

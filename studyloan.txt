@@ -1,0 +1,59 @@
+<section class="contain">
+        <div>
+            <h1>就學貸款</h1>
+            <hr>
+            <div class="content">
+                <div class="subtitle">
+                  辦理流程
+                    <i class="fa fa-chevron-down"></i>
+                </div>
+                <div class="article">
+                    <div class="list_div">
+                      <ol>
+                        <li>對保日期: 107/8/16 09:00 ~ 107/9/10 16:00
+                          <ul>
+                            <li>台灣銀行自107/8/16 開始對保，<a href="https://sloan.bot.com.tw/newsloan/login/SLoanLogin.action">請登入填寫</a></li>
+                            <li>完成對保後，請於 107 年 8 月 22 日上午 9:00 起至 9 月 10 日下午 4:00 止至 <a href="https://www.ccxp.nthu.edu.tw/ccxp/INQUIRE/">校務資訊系統</a> 就學貸款項下登錄資料，並列印申請表，備於註冊時繳至學校就貸收件處，但請勿繳費，若有貸款金額不足，將另行通知辦理補繳。</li>
+                          </ul>
+                        </li><li>繳件日期：107 年 9 月 7 日 (五)、9 月 10 日 (一) 時間: 9:00～12:30, 13:00 ~ 16:00
+                          <ol>
+                            <li>學校部分收費項目不列入就學貸款「體育設施使用費、鍵盤使用 費、住宿押金等」，需依列印之不可貸款項目繳費單，先行完成繳款，並請持已完成繳費之證明文件，於至學校繳交就貸資料時，請現場收件人員確認無誤後，即可受理繳件事宜。</li>
+                            <li>繳交文件，攜帶下列文件至水木二樓演展廳繳件
+                              <ul>
+                                <li>就學貸款申請表﹙保證人姓名、身分證字號及貸款金額須與臺銀撥款通知書內相同﹚</li>
+                                <li>臺灣銀行撥款通知書第2聯</li>
+                                <li>學校註冊繳費單</li>
+                                <li>若106年度家庭年收入高於120萬之申請同學，另請同時攜帶個人私章，以及就讀高中職以上之兄弟姊妹已加蓋107學年度第一學期註冊章之學生證正反面影本，至現場填寫切結書即可。</li>
+                              </ul>
+                            </li>
+                           </ol>
+                          </li>
+                        
+                      </ol>
+                    </div>
+                </div>
+                <hr>
+                <div class="subtitle">
+                     相關法規及問答
+                    <i class="fa fa-chevron-down"></i>
+                </div>
+                <div class="article">
+                    <div class="link">
+                        <i class="fa fa-paperclip"></i><a href="http://law.moj.gov.tw/LawClass/LawAll.aspx?PCode=H0020008" target="_blank">高級中等以上學校學生就學貸款辦法</a><br>
+                        <i class="fa fa-paperclip"></i><a href="https://sloan.bot.com.tw/newsloan/login/SLoanLogin.action" target="_blank">台灣銀行就學貸款常見問題</a>
+                    </div>
+                </div>
+                <hr>
+                <div class="subtitle">
+                     相關連結
+                    <i class="fa fa-chevron-down"></i>
+                </div>
+                <div class="article">
+                    <div class="link">
+                      <i class="fa fa-paperclip"></i><a href="https://sloan.bot.com.tw/newsloan/login/SLoanLogin.action" target="_blank">臺灣銀行就學貸款入口網</a><br>
+                      <i class="fa fa-paperclip"></i><a href="https://sloan.bot.com.tw/newsloan/login/SLoanLogin.action" target="_blank">就學貸款相關表單下載</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>

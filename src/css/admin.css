@@ -1,0 +1,582 @@
+body{
+    font-family:Microsoft JhengHei;
+    overflow: hidden;
+}
+
+input, textarea{
+    border-radius: 5px;
+    font-size: 1.7em;
+}
+
+.btn-primary{
+    white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.edit_save button{
+    float: right;
+    margin: 30px 0px 30px 20px;
+    width: 20%;
+    font-size: 2em;
+}
+
+.roof{
+    display: block;
+    background-color: rgba(255,255,255,0.8);
+    width: 100%;
+    height: 15%;
+    margin: 0;
+    overflow: hidden;
+}
+
+.roof img{
+    max-width: 100%;
+    height: 80%;
+    float: left;
+    position: relative;
+}
+
+.main{
+    display: block;
+    margin: 0;
+    width: 100%;
+    height: 85%;
+}
+
+.side_list{
+    position: fixed;
+    display: block;
+    width: 25%;
+    margin: 0;
+    /* border-bottom: 5px solid red; */
+    height: 85%;
+    overflow-x: auto;
+    overflow-y: scroll;
+}
+
+/*************************
+ *       side list       *
+ *************************/
+
+.side_list_row{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    float: center;
+    text-align: center;
+    display: block;
+}
+
+.side_list_row div{
+    cursor: pointer;
+}
+
+.side_list_item{
+    list-style-type: none;
+    border-bottom: 2px #FFFFFF solid;
+}
+
+.side_list_title{
+    font-size: 30px;
+    font-weight: bold;
+    background-color: #7E0F82;
+    padding: 5px 0;
+    cursor: pointer;
+    color: #FFFFFF;
+    white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.side_list_item a{
+    color: #000000;
+    text-decoration: none;
+}
+
+.side_list_item .drop{
+    width: 100%;
+    height: 0%;
+    display: none;
+    margin: 0;
+    background-color: rgba(125, 13, 129, 0.2);
+}
+
+.side_list_item .drop div{
+    width: 100%;
+    font-size: 24px;
+    padding: 0px 0;
+    box-shadow: 0px 4px 3px -4px #FFFFFF;
+    white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+
+.edit_panel{
+    position: fixed;
+    left: 25%;
+    display: block;
+    margin: 0;
+    width: 75%;
+    /* border: 2px solid black; */
+    background-color: #DDDDDD;
+    height: 85%;
+    overflow-x: auto;
+    overflow-y: scroll;
+}
+
+.edit_panel section{
+    display: none;
+}
+
+/*************************
+ *         cover         *
+ *************************/
+
+.cover{
+    text-align: center;
+}
+ 
+.cover_content{
+    margin: 1em;
+    display: block;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.cover_content .cover_date{
+    padding: 0.8em;
+    background-color: rgb(121,38,108);
+    font-size: 1.5em;
+    font-weight: bold;
+    color: rgba(255,255,255,1);
+    display: block;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.cover_content .cover_title{
+    padding: 0.8em;
+    color: rgba(0,0,0,1);
+    font-size: 1.5em;
+    display: block;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+    text-align: left;
+    background-color: white;
+}
+
+.cover .cover_row{
+    margin: auto;
+    width: 100%;
+    float: center;
+}
+
+
+
+/*************************
+ *      announcement     *
+ *************************/
+
+.announce{
+    text-align: center;
+}
+ 
+.anno_content{
+    margin:1em;
+    display: block;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.anno_content .anno_date{
+    padding: 0.8em;
+    background-color: rgb(121,38,108);
+    font-size: 1.5em;
+    font-weight: bold;
+    color: rgba(255,255,255,1);
+    display: block;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.anno_content .anno_title{
+    padding: 0.8em;
+    color: rgba(0,0,0,1);
+    font-size: 1.5em;
+    display: block;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+    text-align: left;
+    background-color: white;
+}
+
+.announce .anno_row{
+    margin: auto;
+    width: 100%;
+    float: center;
+}
+
+.announce .anno_content button{
+    padding: 0.2em;
+    width: 100%;
+    font-size: 3em;
+    font-weight: bold;
+    display: block;
+}
+
+.announce .anno_content .row div{
+    padding-right: 0.3em;
+    padding-left: 0em;
+}
+
+/*************************
+ *   announcement edit   *
+ *************************/
+
+.edit_anno{
+    font-size: 0.8em;
+}
+
+.edit_anno .edit_anno_row{
+    margin: auto;
+    width: 100%;
+    float: center;
+}
+
+.edit_anno .edit_title input{
+    width: 100%;
+    font-size: 2em;
+}
+
+.edit_anno .edit_content textarea{
+    width: 100%;
+    font-size: 2em;
+    height: 500px;
+}
+
+.edit_attach .attach{
+    font-size: 1.5em;
+}
+
+.edit_attach .outer_row{
+    margin: 5px auto;
+    width: 100%;
+}
+
+.edit_attach .attach_row{
+    margin: 5px auto;
+    width: 100%;
+    background-color: #cccccc;
+    padding: 3px;
+    border-radius: 8px;
+}
+
+.edit_attach .attach button{
+    width: 100%;
+}
+
+.edit_attach .attach_name{
+    white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.edit_attach .add_file{
+    border: 3px black dashed;
+    padding: 10px;
+    width: 100%;
+    margin: auto;
+}
+
+.edit_anno .edit_start_time input, .edit_anno .edit_end_time input, .edit_anno .edit_owner select{
+    width: 30%;
+    font-size: 2em;
+    border-radius: 8px;
+    height: 2em;
+}
+
+/*************************
+ *        service        *
+ *************************/
+
+ 
+
+.service{
+    text-align: center;
+}
+ 
+.serv_content{
+    margin:1em;
+    display: block;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.serv_content .serv_date{
+    padding: 0.8em;
+    background-color: rgb(121,38,108);
+    font-size: 1.5em;
+    font-weight: bold;
+    color: rgba(255,255,255,1);
+    display: block;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.serv_content .serv_service{
+    padding: 0.8em;
+    color: rgba(0,0,0,1);
+    font-size: 1.5em;
+    display: block;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+    text-align: left;
+    background-color: white;
+}
+
+.service .serv_row{
+    margin: auto;
+    width: 100%;
+    float: center;
+}
+
+.service .serv_content button{
+    padding: 0.2em;
+    width: 100%;
+    font-size: 3em;
+    font-weight: bold;
+    display: block;
+}
+
+.service .serv_content .row div{
+    padding-right: 0.3em;
+    padding-left: 0em;
+}
+
+/*************************
+ *   announcement edit   *
+ *************************/
+
+.edit_serv{
+    font-size: 0.8em;
+}
+
+.edit_serv .edit_anno_row{
+    margin: auto;
+    width: 100%;
+    float: center;
+}
+
+.edit_serv .edit_title select{
+    width: 30%;
+    font-size: 2em;
+    border-radius: 8px;
+}
+
+
+.edit_serv .edit_start_time input, .edit_serv .edit_end_time input{
+    width: 30%;
+    font-size: 2em;
+    border-radius: 8px;
+    height: 2em;
+}
+
+/*************************
+ *  lost & found display *
+ *************************/
+ 
+ .lost{
+    text-align: center;
+}
+ 
+.lost_content{
+    margin:1em;
+    margin-bottom: 50px;
+    display: block;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.lost_content .lost_head{
+    padding: 0.8em;
+    background-color: rgb(121,38,108);
+    color: white;
+    font-size: 1.5em;
+    font-weight: bold;
+    display: block;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	border-bottom: 1px solid #aaaaaa;
+}
+
+.lost_content .lost_element{
+    padding: 0.8em;
+    background-color: white;
+    color: black;
+    font-size: 1.5em;
+    display: block;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	text-align: left;
+	border-bottom: 1px solid #aaaaaa;
+}
+
+.lost .lost_row{
+    margin: auto;
+    width: 100%;
+    float: center;
+}
+
+.lost .lost_content button{
+    padding: 0.2em;
+    width: 100%;
+    font-size: 3em;
+    font-weight: bold;
+    display: block;
+}
+
+.lost_content img{
+    max-width: 100%;
+    /*width: 100%;*/
+    overflow: hidden;
+    border: 1px solid #aaaaaa;
+    padding: 5px 5px;
+}
+
+.lost_content .lost_option{
+    margin-bottom: 10px;
+}
+
+.lost .lost_content .row div{
+    padding-right: 0.3em;
+    padding-left: 0em;
+}
+
+/*************************
+ *       lost edit       *
+ *************************/
+
+.edit_lost{
+    font-size: 0.8em;
+}
+
+.edit_lost .edit_lost_row{
+    margin: auto;
+    width: 100%;
+    float: center;
+}
+
+.edit_lost input{
+    width: 30%;
+    font-size: 2em;
+}
+
+
+#lost_preview{
+    max-width: 300px;
+    overflow: hidden;
+    border: 1px solid #aaaaaa;
+    padding: 5px 5px;
+    margin: 10px 0;
+}
+
+.lost_switch{
+    text-align: right;
+    font-size: 2em;
+}
+
+.lost_switch .switch_table{
+    width:100%;
+    font-size: 1em;
+    white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.lost_switch #switch_state{
+    font-weight: bold;
+}
+
+.lost_switch #switch_icon{
+    font-size: 2em;
+}
+
+.lost_switch .switch_state_on, .lost_switch .switch_icon_on{
+    color: green;
+}
+
+.lost_switch .switch_state_off, .lost_switch .switch_icon_off{
+    color: #C9302C;
+}
+
+
+/*************************
+ *       summernote      *
+ *************************/
+
+.article_name{
+    text-align: center;
+}
+
+.edit_summernote{
+    width: 100%;
+    position: relative;
+}
+
+.edit_summernote .edit_owner select{
+    width: 30%;
+    font-size: 1.5em;
+    border-radius: 8px;
+    height: 2em;
+}
+ 
+.note-editor{
+    width: 100%;
+}
+
+.note-editable{
+    height: 500px;
+}
+
+.note-editable section, .note-editable .article{
+    display: block;
+}
+
+
+/*************************
+ *       save panel      *
+ *************************/
+
+#savePanel{
+    position: fixed;
+    display: none;
+    top: 40px;
+    left: 50%;
+    width: 400px;
+    margin-left: -200px;
+    padding: 20px;
+    
+    font-size: 30px;
+    text-align: center;
+    vertical-align: middle;
+    
+    opacity: 0;
+    color: green;
+    background-color: #ceffd0;
+    border: 2px green solid;
+    border-radius: 15px;
+}

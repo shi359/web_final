@@ -1,0 +1,20 @@
+<section class="contain">
+    <div>
+        <h1>台灣公益協會急難救助</h1>
+        <hr>
+        <div class="content">
+            <div class="subtitle">
+                救助說明
+                <i class="fa fa-chevron-down"></i>
+            </div>
+            <div class="article">
+                <div class="list_div">
+                  <ol>
+                    <li>以「提供暫時性經濟協助」為原則，於急難事故發生六個月內提出申請，補助申請同一事由補助一次為限。各項急難救助補助通過與否，以及相關補助金額，由本會審核並視個案狀況予以核定或視實際狀況協助上網募集款項。</li>
+                    <li>補助項目、對象與應備文件：個人或家庭在六個月內發生下列急難事故，可提出申請</li>
+                  </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

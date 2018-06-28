@@ -4,7 +4,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-1">
-                    <img src="logo.png"></img>
+                    <img src="/src/pic/logo.png"></img>
                 </div>
                 <div class="col-sm-4">
                     <h4>國立清華大學</h4> 

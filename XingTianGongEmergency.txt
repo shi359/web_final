@@ -1,0 +1,30 @@
+<section class="contain">
+    <div>
+        <h1>行天宮急難慰助</h1>
+        <hr>
+        <div class="content">
+            <div class="subtitle">
+                慰助對象
+                <i class="fa fa-chevron-down"></i>
+            </div>
+            <div class="article">
+                <div class="list_div">
+                  因家庭經濟突逢變故而影響就學之學士班學生，急難變故發生日起六個月內提出。
+                  <ol>
+                    <li>濟助項目: 針對學生個人之學雜費、生活補助費等濟助。</li>
+                    <li>申請方式: 檢附申請表及相關文件送生輔組，學校初審後函轉行天宮申辦。</li>
+                    <li>必備文件
+                      <ol type="a" class="type_a">
+                        <li>轉介申請表</li>
+                        <li>全戶戶口名簿或近三個月內戶籍謄本影本</li>
+                        <li>低收入戶證明或清寒證明（無則免附）</li>
+                        <li>台北市行天宮急難救助辦法</li>
+                        <li>行天宮急難救助申請表</li>
+                      </ol>  
+                    </li>
+                  </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,188 @@
+.contain{
+    text-align: center;
+}
+
+.content{
+    margin-top: -2em;
+    display: inline-block;
+    margin: auto;
+    width: 80%;
+    text-align: left;
+}
+
+.article{
+    display: none;
+    margin: auto;
+    margin-top: 1.5em;
+    line-height: 1.8em;
+    font-size: 1.5em;
+    clear: both;
+}
+
+.subtitle{
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    clear: both;
+    color: #791F6C;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.subtitle i{
+    float: right;
+}
+
+.contact{
+    text-align: left;
+    font-size: 1.3125em;
+    padding: 0.1em 0;
+    margin-top: 2em;
+    color: #791F6C;
+}
+
+.extension, .mail{
+    text-align: left;
+    font-size: 1.3125em;
+    padding: 0.1em 0;
+    color: #791F6C;
+}
+
+
+.content hr{
+    width: 100%;
+}
+
+.content h2{
+    color: #791F6C;
+    font-weight: bold;
+}
+
+.content h3{
+    color: #141260;
+    font-weight: bold;
+}
+
+.content h4{
+    color: #888888;
+    font-weight: bold;
+}
+
+.content table{
+    width: 100%;
+}
+
+.content thead{
+    text-align: right;
+    color: #FFFFFF;
+    background-color: #888888;
+}
+
+.content table,th,td{
+    padding: 0.5em;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.content tbody tr:nth-child(even){
+    background-color:#EEE8AA;
+}
+
+.content a{
+    color: inherit;
+}
+
+
+.content .list_div{
+    margin: 1em;
+    margin-bottom: 2em;
+}
+
+.content ol {
+    counter-reset: li;
+    list-style: none;
+}
+.content ol li {
+    counter-increment: li;
+    margin-bottom: 5px;
+}
+
+.content ol li:before {
+    content: counter(li) ". ";
+    margin-left: -1.5em;
+    margin-right: 0.5em; text-align: right;
+    color: #7E0F82;
+    font-weight: bold;
+}
+
+.content .type_a {
+    list-style: none;
+}
+
+.content .type_a li:before {
+    content: counter(li, lower-latin) ". ";
+    margin-left: -1.5em;
+    margin-right: 0.5em; text-align: right;
+    color: #7E0F82;
+    font-weight: bold;
+}
+
+
+.content ul {
+    list-style: none;
+}
+.content ul li {
+    counter-increment: item;
+    margin-bottom: 5px;
+}
+
+.content ul li:before {
+    content: "• ";
+    margin-left: -1.5em;
+    margin-right: 0.5em; text-align: right;
+    color: #7E0F82;
+    font-weight: bold;
+}
+
+.content .no_bullet li:before {
+    content: "";
+    margin-left: -1.5em;
+    margin-right: 0.5em; text-align: right;
+    color: #7E0F82;
+    font-weight: bold;
+}
+
+
+
+.content .fa{
+    margin-right: 0.5em;
+}
+
+.content .fa-times{
+    color: red;
+}
+
+.content .fa-check{
+    color: green;
+}
+
+.content .fa-paperclip{
+    color: blue;
+}
+
+.content .fa-file{
+    color: #791F6C;
+}
+
+.content .fa-link{
+    color: #888888;
+}
+
+.content pre{
+    font-family:Microsoft JhengHei;
+    font-size: 1em;
+}
+
+.link{
+    margin-left: 1em;
+}

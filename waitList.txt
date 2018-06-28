@@ -1,0 +1,5 @@
+<section class="contain">
+    <div>
+        <h1>候補宿舍申請</h1>
+    </div>
+</section>
